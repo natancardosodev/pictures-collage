@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Editor de Imagens</title>
+        <link rel="stylesheet" href="/public/css/style.css" />
+    </head>
+
+    <body>
+        <main>
+            <div class="px-5 py-5 my-5 text-center" id="wrapper">
+                <h1 class="display-5 fw-bold text-body-emphasis">Faça seu cartaz #EuVou</h1>
+                <div class="col-lg-8 mx-auto">
+                    <p class="lead mb-4">Escolha uma foto no formato quadrado do seu rosto</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"></div>
+                </div>
+                <input type="file" id="uploadImage" accept="image/*" class="mb-4" />
+                <div id="resultImage"></div>
+                <div class="d-grid">
+                    <a
+                        id="downloadLink"
+                        class="btn btn-primary btn-lg mt-3"
+                        style="display: none"
+                        download="cartaz-euvou.png"
+                        ><i class="fa-solid fa-download"></i> Baixar imagem</a
+                    >
+                </div>
+            </div>
+            <div class="px-4 py-5 my-5 text-center" id="msg-error" style="display: none">
+                <h1 class="display-6 fw-bold text-body-emphasis mb-4">Modelo de cartaz não encontrado!</h1>
+                <div class="alert alert-warning" role="alert">
+                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Verifique o endereço e tente novamente.</h4>
+                </div>
+            </div>
+            <footer class="pt-3 mt-4 text-body-tertiary border-top">
+                &copy; 2023 - Desenvolvido por Natan Cardoso
+            </footer>
+        </main>
+
+        <script src="/public/js/scripts.js"></script>
+    </body>
+</html>
