@@ -15,6 +15,12 @@ main {
     padding: 2em;
 }
 
-#resultImage img {
+#resultImage img,
+#uploadImage {
     max-width: 100%;
+}
+
+#uploadImage {
+    background: #dedede;
+    border-color: #787878;
 }

@@ -34,7 +34,10 @@ module.exports = {
             'window.jQuery': 'jquery'
         }),
         new HtmlWebpackPlugin({
-            title: 'Cartaz #EuVou'
+            title: 'Cartaz #EuVou',
+            filename: 'index.html',
+            template: './assets/index.html',
+            chunks: ['index']
         })
     ],
     resolve: {
@@ -86,6 +89,18 @@ module.exports = {
                 test: /\.html$/i,
                 loader: 'html-loader',
                 options: {
+                    minimize: {
+                        caseSensitive: true,
+                        conservativeCollapse: true,
+                        keepClosingSlash: true,
+                        minifyCSS: true,
+                        minifyJS: true,
+                        removeComments: false,
+                        collapseWhitespace: false,
+                        removeRedundantAttributes: true,
+                        removeScriptTypeAttributes: true,
+                        removeStyleLinkTypeAttributes: true
+                    },
                     attributes: {
                         list: [
                             {

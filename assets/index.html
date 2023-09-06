@@ -9,13 +9,15 @@
 
     <body>
         <main>
-            <div class="px-5 py-5 my-5 text-center" id="wrapper">
-                <h1 class="display-5 fw-bold text-body-emphasis">Faça seu cartaz #EuVou</h1>
-                <div class="col-lg-8 mx-auto">
-                    <p class="lead mb-4">Escolha uma foto no formato quadrado do seu rosto</p>
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"></div>
+            <div class="mb-5 text-center" id="wrapper">
+                <span id="nameEvent" class="mx-auto fs-6 text-muted fst-italic"></span>
+                <img src="#" id="fluxo-colagem" alt="Fluxo da colagem" class="img-fluid" />
+                <h1 class="col-lg-7 mx-auto display-5 my-4 fw-bold text-body-emphasis">
+                    Escolha sua foto e faça o cartaz #EuVou
+                </h1>
+                <div class="mb-3">
+                    <input type="file" class="form-control" id="uploadImage" accept="image/*" class="mb-4" />
                 </div>
-                <input type="file" id="uploadImage" accept="image/*" class="mb-4" />
                 <div id="resultImage"></div>
                 <div class="d-grid">
                     <a
@@ -33,8 +35,39 @@
                     <h4><i class="fa-solid fa-triangle-exclamation"></i> Verifique o endereço e tente novamente.</h4>
                 </div>
             </div>
-            <footer class="pt-3 mt-4 text-body-tertiary border-top">
-                &copy; 2023 - Desenvolvido por Natan Cardoso
+            <footer>
+                <p class="d-inline-flex gap-1">
+                    <a class="btn btn-terciary text-body-tertiary" id="btnCreditos" href="#creditos" role="button">
+                        Informações/FAQ
+                    </a>
+                </p>
+                <div class="collapse text-body-secondary" id="creditosDesc">
+                    <div class="card card-body">
+                        <h3>O que faz este site?</h3>
+                        <p>É um editor de colagem de cartaz do tipo #EuVou destinado à divulgação de eventos.</p>
+                        <p>O site foi elaborado pelo desenvolvedor Natan Cardoso.</p>
+                        <h3>Como usar?</h3>
+                        <p>
+                            Clique no botão "Escolher Arquivo", dê permissão para envio caso esteja no celular, procure
+                            a imagem e clique em algum botão como Concluído/Abrir.
+                        </p>
+                        <p>
+                            Enviada a imagem basta clicar em Baixar e depois no botão de compartilhar enviar para a rede
+                            social desejada.
+                        </p>
+                        <h3>Para onde vai os arquivos enviados?</h3>
+                        <p>
+                            As fotos enviadas e geradas não são enviadas para nenhum servidor de internet, ficam apenas
+                            no armazenamento temporário do seu navegador.
+                        </p>
+                        <h3>Deseja ter seu evento aqui?</h3>
+                        <p>
+                            Entre em contato com o desenvolvedor pelo direct do Instagram
+                            <a href="https://www.instagram.com/natancb7/" target="_blank">@natancb7</a> e consulte os
+                            requisitos.
+                        </p>
+                    </div>
+                </div>
             </footer>
         </main>
 

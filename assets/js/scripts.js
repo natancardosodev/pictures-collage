@@ -7,7 +7,13 @@ $(() => {
     const predefinedImage = new Image();
     const urlParams = new URLSearchParams(window.location.search);
     const eventName = urlParams.get('evento');
-    predefinedImage.src = './assets/images/' + eventName + '.png';
+    predefinedImage.src = `./assets/images/${eventName}.png`;
+    $('#fluxo-colagem').attr('src', `/public/assets/images/${eventName}-colagem.jpg`);
+    $('#nameEvent').html(`#${eventName}`);
+
+    $('#btnCreditos').on('click', () => {
+        $('#creditosDesc').toggle(300);
+    });
 
     predefinedImage.onload = function () {
         $('#resultImage').html(predefinedImage);
