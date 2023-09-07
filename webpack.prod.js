@@ -11,7 +11,7 @@ module.exports = merge(common, {
     plugins: [
         new RemovePlugin({
             after: {
-                root: './dist',
+                root: './public',
                 test: [
                     {
                         folder: './images',
