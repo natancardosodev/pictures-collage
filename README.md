@@ -23,7 +23,7 @@ _Fotografia de Dragos Gontariu na [Unplash](https://unsplash.com/)_
 
 ```sh
 npm install
-npm run build
+npm run start ## modo watch
 ```
 
 -   **Deploy:** `npm ci --production && npm run build`

@@ -95,7 +95,7 @@ module.exports = {
                         keepClosingSlash: true,
                         minifyCSS: true,
                         minifyJS: true,
-                        removeComments: false,
+                        removeComments: true,
                         collapseWhitespace: false,
                         removeRedundantAttributes: true,
                         removeScriptTypeAttributes: true,
@@ -104,19 +104,13 @@ module.exports = {
                     attributes: {
                         list: [
                             {
-                                // Tag name
                                 tag: 'img',
-                                // Attribute name
                                 attribute: 'src',
-                                // Type of processing, can be `src` or `scrset`
                                 type: 'src'
                             },
                             {
-                                // Tag name
                                 tag: 'img',
-                                // Attribute name
                                 attribute: 'srcset',
-                                // Type of processing, can be `src` or `scrset`
                                 type: 'srcset'
                             },
                             {
@@ -130,19 +124,10 @@ module.exports = {
                                 type: 'srcset'
                             },
                             {
-                                // Tag name
                                 tag: 'link',
-                                // Attribute name
                                 attribute: 'href',
-                                // Type of processing, can be `src` or `scrset`
                                 type: 'src',
-                                // Allow to filter some attributes
                                 filter: (tag, attribute, attributes, resourcePath) => {
-                                    // The `tag` argument contains a name of the HTML tag.
-                                    // The `attribute` argument contains a name of the HTML attribute.
-                                    // The `attributes` argument contains all attributes of the tag.
-                                    // The `resourcePath` argument contains a path to the loaded HTML file.
-
                                     if (/my-html\.html$/.test(resourcePath)) {
                                         return false;
                                     }

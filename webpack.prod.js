@@ -1,6 +1,7 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
+const HtmlReplaceWebpackPlugin = require('html-replace-webpack-plugin');
 const RemovePlugin = require('remove-files-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -9,6 +10,12 @@ module.exports = merge(common, {
     mode: 'production',
     stats: 'errors-only',
     plugins: [
+        new HtmlReplaceWebpackPlugin([
+            {
+                pattern: '/public/',
+                replacement: '/'
+            }
+        ]),
         new RemovePlugin({
             after: {
                 root: './public',
@@ -33,7 +40,7 @@ module.exports = merge(common, {
                 log: false,
                 logError: true
             }
-        }),
+        })
     ],
     optimization: {
         splitChunks: {
@@ -62,7 +69,7 @@ module.exports = merge(common, {
                 assetNameRegExp: /\.css$/g,
                 cssProcessor: require('cssnano'),
                 cssProcessorPluginOptions: {
-                    preset: ['default', { discardComments: { removeAll: true } }],
+                    preset: ['default', { discardComments: { removeAll: true } }]
                 },
                 canPrint: true
             }),
@@ -71,10 +78,10 @@ module.exports = merge(common, {
                 extractComments: false,
                 terserOptions: {
                     parse: {
-                        ecma: 2017,
+                        ecma: 2017
                     },
                     compress: {
-                        ecma: 2017,
+                        ecma: 2017
                     },
                     warnings: false,
                     mangle: true,
@@ -84,9 +91,9 @@ module.exports = merge(common, {
                     ie8: false,
                     keep_classnames: undefined,
                     keep_fnames: false,
-                    safari10: false,
-                },
-            }),
-        ],
+                    safari10: false
+                }
+            })
+        ]
     }
 });
