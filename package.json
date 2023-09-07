@@ -27,13 +27,13 @@
         "node": ">=14.19.1"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^6.4.2",
-        "bootstrap": "^5.3.1",
-        "jquery": "^3.7.1",
         "@babel/core": "^7.10.2",
         "@babel/preset-env": "^7.10.2",
+        "@fortawesome/fontawesome-free": "^6.4.2",
         "@types/git-rev-sync": "^2.0.0",
+        "autoprefixer": "^10.4.15",
         "babel-loader": "^8.1.0",
+        "bootstrap": "^5.3.1",
         "css-loader": "^3.5.3",
         "file-loader": "^6.0.0",
         "git-rev-sync": "^3.0.1",
@@ -41,6 +41,7 @@
         "html-webpack-plugin": "^4.5.2",
         "husky": "^8.0.0",
         "image-webpack-loader": "^6.0.0",
+        "jquery": "^3.7.1",
         "mini-css-extract-plugin": "^0.9.0",
         "optimize-css-assets-webpack-plugin": "^5.0.3",
         "postcss-loader": "^3.0.0",
@@ -48,7 +49,7 @@
         "remove-files-webpack-plugin": "^1.4.4",
         "resolve-url-loader": "^3.1.1",
         "sass": "^1.45.2",
-        "sass-loader": "^10.0.0",
+        "sass-loader": "^8.0.2",
         "template-string-optimize-loader": "^3.0.0",
         "terser-webpack-plugin": "^2.3.8",
         "webpack": "^4.43.0",
@@ -60,14 +61,14 @@
     },
     "devDependencies": {
         "check-node-version": "^4.0.3",
-        "eslint": "^7.7.0",
+        "eslint": "^8.46.0",
         "eslint-config-airbnb-base": "^14.2.0",
-        "eslint-config-prettier": "^6.11.0",
+        "eslint-config-prettier": "^8.10.0",
         "eslint-plugin-import": "^2.21.2",
-        "eslint-plugin-prettier": "^3.1.4",
-        "prettier": "^2.1.1",
-        "prettier-eslint": "^11.0.0",
-        "stylelint": "^13.6.1",
-        "stylelint-config-sass-guidelines": "^7.0.0"
+        "eslint-plugin-prettier": "^5.0.0",
+        "prettier": "^3.0.1",
+        "prettier-eslint": "^15.0.1",
+        "stylelint": "^13.13.1",
+        "stylelint-config-sass-guidelines": "^9.0.1"
     }
 }
