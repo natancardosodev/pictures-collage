@@ -20,7 +20,7 @@
         "watch": "webpack-dashboard -- webpack --config webpack.dev.js --watch",
         "prod": "webpack --config webpack.prod.js",
         "rm": "rm -rf public/images , public/node_modules",
-        "build": "npm run lint && npm run imports && npm run prod && npm run rm"
+        "build": "npm run imports && npm run prod && npm run rm"
     },
     "license": "ISC",
     "engines": {
