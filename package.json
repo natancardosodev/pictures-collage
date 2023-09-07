@@ -16,7 +16,7 @@
         "hash": "node import-generator/hash.js",
         "check-version": "./node_modules/.bin/check-node-version --node 14.19.1 --npm 6.14.16",
         "start": "npm run imports && npm run watch",
-        "imports": "npm run rm-dist && npm run hash",
+        "imports": "npm run rm-dist",
         "watch": "webpack-dashboard -- webpack --config webpack.dev.js --watch",
         "prod": "webpack --config webpack.prod.js",
         "rm": "rm -rf public/images , public/node_modules",
