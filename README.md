@@ -8,14 +8,24 @@ _Fotografia de Dragos Gontariu na [Unplash](https://unsplash.com/)_
 
 ## Como usar?
 
--   Clique no botão "Escolher Arquivo", dê permissão para envio caso esteja no celular
--   Procure a imagem e clique em algum botão como Concluído/Abrir.
--   Enviada a imagem basta clicar em Baixar
--   Depois no botão de compartilhar enviar para a rede social desejada.
+-   Clique no botão `Escolher Arquivo`, dê permissão para envio caso esteja no celular
+-   Procure a imagem e clique em algum botão como `Concluído/Abrir`.
+-   Enviada a imagem basta clicar em `Baixar Imagem`
+-   Depois no botão de `compartilhar` enviar para a rede social desejada.
 
 ## Demonstrativo
 
--   https://criar-cartaz-euvou.netlify.app/index.html?evento=evento-exemplo
+-   https://criar-cartaz-euvou.netlify.app/?evento=evento-exemplo
+
+## Features
+
+-   HTML, Sass, Javascript
+-   Bootstrap 5
+-   jQuery 3
+-   Font Awesome 6
+-   Webpack 4
+-   ESLint, Stylelint e Prettier
+-   Husky
 
 ## Instalação
 
@@ -30,7 +40,11 @@ npm run start ## modo watch
 
 ## Execução local
 
--   **Opção 1**
-    -   Habilitar a externsão do VS Code chamada Live Server `ext install ritwickdey.LiveServer`
+-   **Opção 1** - Modo Build
+    -   Rodar `npm run build && npm run server`
+    -   E Acessar http://127.0.0.1:5500/index.html?evento=evento-exemplo
+-   **Opção 2** - Modo Watch
+    -   Executar `npm run start`
+    -   Habilitar a extensão do `VS Code` chamada Live Server `ext install ritwickdey.LiveServer`
     -   E Acessar http://127.0.0.1:5500/public/index.html?evento=evento-exemplo
     -   _Extra:_ Rodar o `ngrok http 5500` (Caso deseje enviar seu localhost para teste externo)
