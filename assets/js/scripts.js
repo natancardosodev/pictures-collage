@@ -8,7 +8,7 @@ $(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const eventName = urlParams.get('evento');
     predefinedImage.src = `./assets/images/${eventName}.png`;
-    $('#fluxo-colagem').attr('src', `/public/assets/images/${eventName}-colagem.jpg`);
+    $('#fluxo-colagem').attr('src', `assets/images/${eventName}-colagem.jpg`);
     $('#nameEvent').html(`#${eventName}`);
 
     $('#btnCreditos').on('click', () => {
@@ -43,10 +43,8 @@ $(() => {
                         canvas.height = predefinedImage.height;
                         const ctx = canvas.getContext('2d');
 
-                        // Desenhe a imagem carregada no canvas (você pode ajustar as coordenadas)
-                        ctx.drawImage(uploadedImage, 0, 0, 1080, 1080);
-
                         // Desenhe a imagem predefinida no canvas
+                        ctx.drawImage(uploadedImage, 0, 0, 1080, 1080);
                         ctx.drawImage(predefinedImage, 0, 0);
 
                         // Exiba a imagem mesclada
@@ -62,7 +60,4 @@ $(() => {
             reader.readAsDataURL(file);
         }
     });
-
-    // Manipule o clique no botão de mesclagem
-    $('#mergeImages').on('click', () => {});
 });
