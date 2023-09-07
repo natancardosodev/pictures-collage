@@ -31,7 +31,7 @@
         "@babel/preset-env": "^7.10.2",
         "@fortawesome/fontawesome-free": "^6.4.2",
         "@types/git-rev-sync": "^2.0.0",
-        "autoprefixer": "^10.4.15",
+        "autoprefixer": "^9.8.0",
         "babel-loader": "^8.1.0",
         "bootstrap": "^5.3.1",
         "css-loader": "^3.5.3",
