@@ -55,7 +55,7 @@ $(() => {
                         // Ative o link de download
                         $('#downloadLink').attr('href', mergedImage.src).show();
                     }
-                }, 100);
+                }, 50);
             };
             reader.readAsDataURL(file);
         }
