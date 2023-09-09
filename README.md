@@ -15,7 +15,7 @@ _Fotografia de Dragos Gontariu na [Unplash](https://unsplash.com/)_
 
 ## Demonstrativo
 
--   https://criar-cartaz-euvou.netlify.app/?evento=evento-exemplo
+-   https://cartaz-euvou.netlify.app/?evento=evento-exemplo
 
 ## Features
 
@@ -36,6 +36,7 @@ npm install
 npm run start ## modo watch
 ```
 
+-   **No Windows execute:** `npm run watch` ou `npm run prod`
 -   **Deploy:** `npm ci --production && npm run build`
 
 ## Execução local

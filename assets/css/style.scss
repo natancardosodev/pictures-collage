@@ -1,6 +1,5 @@
 @import '~bootstrap/dist/css/bootstrap';
 @import '~@fortawesome/fontawesome-free/css/fontawesome.css';
-@import '~@fortawesome/fontawesome-free/css/brands.css';
 @import '~@fortawesome/fontawesome-free/css/solid.css';
 
 body {
@@ -18,6 +17,7 @@ main {
 #resultImage img,
 #uploadImage {
     max-width: 100%;
+    height: 100%;
 }
 
 #uploadImage {

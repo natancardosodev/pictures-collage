@@ -14,6 +14,10 @@ module.exports = merge(common, {
             {
                 pattern: '/public/',
                 replacement: '/'
+            },
+            {
+                pattern: 'analyticsID',
+                replacement: 'G-KDGP6L9N54'
             }
         ]),
         new RemovePlugin({
