@@ -30,11 +30,12 @@ $(() => {
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                const uploadedImageElement = new Image();
+                const uploadedImageElement = new Image(1080, 1080);
                 uploadedImageElement.src = e.target.result;
+                uploadedImageElement.alt = "Modelo de Cartaz #EuVou";
                 uploadedImage = uploadedImageElement;
                 $('#resultImage').html(uploadedImage);
-
+                
                 setTimeout(() => {
                     if (uploadedImage) {
                         // Crie um elemento de tela de canvas para mesclar as imagens
@@ -48,8 +49,9 @@ $(() => {
                         ctx.drawImage(predefinedImage, 0, 0);
 
                         // Exiba a imagem mesclada
-                        const mergedImage = new Image();
+                        const mergedImage = new Image(1080, 1080);
                         mergedImage.src = canvas.toDataURL('image/png');
+                        mergedImage.alt = 'Cartaz #EuVou Gerado';
                         $('#resultImage').html(mergedImage);
 
                         // Ative o link de download
