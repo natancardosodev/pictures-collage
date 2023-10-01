@@ -1,8 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Criar Cartaz #EuVou</title>
+        <link rel="stylesheet" href="/public/css/style.css" />
+        <link rel="stylesheet" href="/public/css/cropper.min.css" />
         <title>Cartaz #EuVou</title>
         <meta name="title" content="Criar Cartaz #EuVou para Eventos" />
         <meta name="description" content="Gerador/Colagem de imagens de cartazes #EuVou para eventos." />
@@ -39,26 +42,27 @@
                 <h1 class="col-lg-7 mx-auto display-5 my-4 fw-bold text-body-emphasis">
                     Escolha sua foto e faça o Cartaz #EuVou
                 </h1>
-                <div class="mb-3">
-                    <input
-                        type="file"
-                        class="form-control"
-                        id="uploadImage"
-                        aria-label="Upload Image"
-                        accept="image/*"
-                        class="mb-4"
-                    />
-                </div>
-                <div id="resultImage"></div>
-                <div class="d-grid">
+                <input
+                    type="file"
+                    class="form-control"
+                    id="uploadImage"
+                    aria-label="Upload Image"
+                    accept="image/*"
+                    class="mb-4"
+                />
+                <div class="d-grid mb-3">
+                    <button class="btn btn-primary btn-lg mt-3" style="display: none" id="btn-cortar">
+                        <i class="fa-solid fa-crop"></i> Cortar Imagem
+                    </button>
                     <a
                         id="downloadLink"
-                        class="btn btn-primary btn-lg mt-3"
+                        class="btn btn-secondary btn-lg mt-3"
                         style="display: none"
                         download="cartaz-euvou.png"
                         ><i class="fa-solid fa-download"></i> Baixar imagem</a
                     >
                 </div>
+                <div id="resultImage"></div>
             </div>
             <div class="px-4 py-5 my-5 text-center" id="msg-error" style="display: none">
                 <h1 class="display-6 fw-bold text-body-emphasis mb-4">Modelo de cartaz não encontrado!</h1>
@@ -109,5 +113,6 @@
         </main>
 
         <script src="/public/js/scripts.js"></script>
+        <script src="/public/js/cropper.min.js"></script>
     </body>
 </html>
