@@ -3,6 +3,7 @@ import Cropper from 'cropperjs';
 
 $(() => {
     let uploadedImage = null;
+    let dadosEvento = null;
     let buttonCortar = $('#btn-cortar');
     let buttonLink = $('#downloadLink');
     let result = $('#resultImage');
@@ -12,8 +13,12 @@ $(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const eventName = urlParams.get('evento');
     predefinedImage.src = `./assets/images/${eventName}.png`;
-    $('#fluxo-colagem').attr('src', `assets/images/${eventName}-colagem.jpg`);
     $('#nameEvent').html(`#${eventName}`);
+
+    //fetch(`/assets/configs/${eventName}.json`)
+    //.then(function (response) {
+    //    response = dadosEvento;
+    // });
 
     $('#btnCreditos').on('click', () => {
         $('#creditosDesc').toggle(300);
@@ -32,15 +37,15 @@ $(() => {
     $('#uploadImage').on('change', (e) => {
         const file = e.target.files[0];
 
-        if (file.size > 2000000) {
+        if (file.size > 3000000) {
             // @todo melhorar alerts
-            window.alert('O arquivo informado é maior de 2MB. Envie um arquivo menor.');
+            window.alert('O arquivo informado é maior de 3MB. Envie um arquivo menor.');
 
             return;
         }
 
-        if (!['image/jpg', 'image/jpeg', 'image/png'].includes(file.type)) {
-            window.alert('Apenas arquivos de imagem são aceitos, como png e jpg');
+        if (!['image/heif', 'image/heic', 'image/jpg', 'image/jpeg', 'image/png'].includes(file.type)) {
+            window.alert('Apenas arquivos de imagem são aceitos, como jpg.');
 
             return;
         }
