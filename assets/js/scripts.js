@@ -34,8 +34,9 @@ $(() => {
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                const uploadedImageElement = new Image();
+                const uploadedImageElement = new Image(1080, 1080);
                 uploadedImageElement.src = e.target.result;
+                uploadedImageElement.alt = 'Modelo de Cartaz #EuVou';
                 uploadedImage = uploadedImageElement;
                 result.html(uploadedImage);
                 buttonCortar.show();
@@ -84,7 +85,7 @@ $(() => {
                             buttonLink.attr('href', mergedImage.src).show();
                         });
                     }
-                }, 100);
+                }, 50);
             };
             reader.readAsDataURL(file);
         }
