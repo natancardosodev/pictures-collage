@@ -24,5 +24,6 @@
     "explorer.compactFolders": false,
     "workbench.editor.wrapTabs": true,
     "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+    "liveServer.settings.port": 5501
 }

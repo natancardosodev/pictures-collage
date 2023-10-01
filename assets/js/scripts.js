@@ -1,7 +1,11 @@
 import $ from 'jquery';
+import Cropper from 'cropperjs';
 
 $(() => {
     let uploadedImage = null;
+    let buttonCortar = $('#btn-cortar');
+    let buttonLink = $('#downloadLink');
+    let result = $('#resultImage');
 
     // Carregue a imagem predefinida
     const predefinedImage = new Image();
@@ -33,7 +37,8 @@ $(() => {
                 const uploadedImageElement = new Image();
                 uploadedImageElement.src = e.target.result;
                 uploadedImage = uploadedImageElement;
-                $('#resultImage').html(uploadedImage);
+                result.html(uploadedImage);
+                buttonCortar.show();
 
                 setTimeout(() => {
                     if (uploadedImage) {
@@ -43,17 +48,41 @@ $(() => {
                         canvas.height = predefinedImage.height;
                         const ctx = canvas.getContext('2d');
 
-                        // Desenhe a imagem predefinida no canvas
-                        ctx.drawImage(uploadedImage, 0, 0, 1080, 1080);
-                        ctx.drawImage(predefinedImage, 0, 0);
+                        var cropper = new Cropper(uploadedImage, {
+                            aspectRatio: 1,
+                            viewMode: 3,
+                            dragMode: 'move',
+                            center: true,
+                            minCropBoxWidth: 650,
+                            minCropBoxHeight: 150,
+                            cropBoxMovable: true,
+                            cropBoxResizable: true,
+                            ready: function (event) {
+                                // cropper.zoomTo(1);
+                            },
 
-                        // Exiba a imagem mesclada
-                        const mergedImage = new Image();
-                        mergedImage.src = canvas.toDataURL('image/png');
-                        $('#resultImage').html(mergedImage);
+                            crop: function (event) {
+                                cropper.scale(1, 1);
+                            },
 
-                        // Ative o link de download
-                        $('#downloadLink').attr('href', mergedImage.src).show();
+                            zoom: function (event) {
+                                if (event.detail.oldRatio === 1) {
+                                    event.preventDefault();
+                                }
+                            }
+                        });
+
+                        buttonCortar.on('click', (e) => {
+                            result.innerHTML = '';
+                            ctx.drawImage(cropper.getCroppedCanvas(), 0, 0, 1080, 1080);
+                            ctx.drawImage(predefinedImage, 0, 0, 1080, 1080);
+
+                            const mergedImage = new Image();
+                            mergedImage.src = canvas.toDataURL('image/png');
+                            result.html(mergedImage);
+                            buttonCortar.hide();
+                            buttonLink.attr('href', mergedImage.src).show();
+                        });
                     }
                 }, 100);
             };

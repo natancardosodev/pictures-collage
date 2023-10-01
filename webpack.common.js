@@ -9,6 +9,7 @@ const entry = require('webpack-glob-entry');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const hashGit = require('git-rev-sync');
 // const hash = hashGit.short();
+const CopyPlugin = require('copy-webpack-plugin');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -38,6 +39,18 @@ module.exports = {
             filename: 'index.html',
             template: './assets/index.html',
             chunks: ['index']
+        }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: 'node_modules/cropperjs/dist/cropper.min.css',
+                    to: 'css'
+                },
+                {
+                    from: 'node_modules/cropperjs/dist/cropper.min.js',
+                    to: 'js'
+                }
+            ]
         })
     ],
     resolve: {
