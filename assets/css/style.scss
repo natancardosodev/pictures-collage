@@ -1,5 +1,6 @@
 @import '~bootstrap/dist/css/bootstrap';
 @import '~@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '~@fortawesome/fontawesome-free/css/brands.css';
 @import '~@fortawesome/fontawesome-free/css/solid.css';
 
 body {
@@ -12,6 +13,16 @@ main {
     margin: 0 auto;
     max-width: 960px;
     padding: 2em;
+}
+
+#resultImage {
+    display: flex;
+    flex-flow: column;
+
+    .item {
+        flex: 1;
+        display: flex;
+    }
 }
 
 #resultImage img,

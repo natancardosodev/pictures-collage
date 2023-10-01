@@ -4,9 +4,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Criar Cartaz #EuVou</title>
-        <link rel="stylesheet" href="/public/css/style.css" />
-        <link rel="stylesheet" href="/public/css/cropper.min.css" />
-        <title>Cartaz #EuVou</title>
         <meta name="title" content="Criar Cartaz #EuVou para Eventos" />
         <meta name="description" content="Gerador/Colagem de imagens de cartazes #EuVou para eventos." />
         <meta name="keywords" content="cartaz euvou, gerador de cartaz, colagem de imagens" />
@@ -16,6 +13,7 @@
         <meta name="author" content="Natan Cardoso Dev" />
         <link rel="icon" type="image/x-icon" href="/public/assets/images/favicon.ico" />
         <link rel="stylesheet" href="/public/css/style.css" />
+        <link rel="stylesheet" href="/public/css/cropper.min.css" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=analyticsID"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -62,7 +60,9 @@
                         ><i class="fa-solid fa-download"></i> Baixar imagem</a
                     >
                 </div>
-                <div id="resultImage"></div>
+                <div id="resultImage">
+                    <div class="item"></div>
+                </div>
             </div>
             <div class="px-4 py-5 my-5 text-center" id="msg-error" style="display: none">
                 <h1 class="display-6 fw-bold text-body-emphasis mb-4">Modelo de cartaz não encontrado!</h1>
