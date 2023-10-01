@@ -34,7 +34,7 @@ $(() => {
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                const uploadedImageElement = new Image(1080, 1080);
+                const uploadedImageElement = new Image(1080, 1170);
                 uploadedImageElement.src = e.target.result;
                 uploadedImageElement.alt = 'Modelo de Cartaz #EuVou';
                 uploadedImage = uploadedImageElement;
@@ -75,8 +75,8 @@ $(() => {
 
                         buttonCortar.on('click', (e) => {
                             result.innerHTML = '';
-                            ctx.drawImage(cropper.getCroppedCanvas(), 0, 0, 1080, 1080);
-                            ctx.drawImage(predefinedImage, 0, 0, 1080, 1080);
+                            ctx.drawImage(cropper.getCroppedCanvas(), 0, 0, 1080, 1170);
+                            ctx.drawImage(predefinedImage, 0, 0, 1080, 1170);
 
                             const mergedImage = new Image();
                             mergedImage.src = canvas.toDataURL('image/png');
