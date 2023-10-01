@@ -31,6 +31,20 @@ $(() => {
     // Manipule o upload da imagem
     $('#uploadImage').on('change', (e) => {
         const file = e.target.files[0];
+
+        if (file.size > 2000000) {
+            // @todo melhorar alerts
+            window.alert('O arquivo informado é maior de 2MB. Envie um arquivo menor.');
+
+            return;
+        }
+
+        if (!['image/jpg', 'image/jpeg', 'image/png'].includes(file.type)) {
+            window.alert('Apenas arquivos de imagem são aceitos, como png e jpg');
+
+            return;
+        }
+
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
@@ -39,6 +53,7 @@ $(() => {
                 uploadedImageElement.alt = 'Modelo de Cartaz #EuVou';
                 uploadedImage = uploadedImageElement;
                 result.html(uploadedImage);
+                buttonLink.hide();
                 buttonCortar.show();
 
                 setTimeout(() => {
@@ -50,7 +65,7 @@ $(() => {
                         const ctx = canvas.getContext('2d');
 
                         var cropper = new Cropper(uploadedImage, {
-                            aspectRatio: 1,
+                            aspectRatio: 1 / 1.1083, // 1170 / 1080
                             viewMode: 3,
                             dragMode: 'move',
                             center: true,
