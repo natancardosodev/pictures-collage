@@ -24,7 +24,7 @@ $(() => {
             return;
         }
 
-        fetch(`/assets/configs/${eventName}.json`)
+        fetch(`./assets/configs/${eventName}.json`)
             .then((response) => response.json())
             .then((response) => {
                 dadosEvento = response;
@@ -41,6 +41,7 @@ $(() => {
     };
 
     function setDadosEvento() {
+        window.document.title += ' - ' + dadosEvento.data.shortTitle;
         predefinedImage.alt = dadosEvento.data.title;
         predefinedImage.width = dadosEvento.sizes.width;
         predefinedImage.height = dadosEvento.sizes.height;
