@@ -49,12 +49,19 @@
                     class="mb-4"
                 />
                 <div class="d-grid mb-3">
-                    <button class="btn btn-primary btn-lg mt-3" style="display: none" id="btn-cortar">
-                        <i class="fa-solid fa-crop"></i> Cortar Imagem
+                    <div class="alert alert-warning mt-3 fs-5" role="alert">
+                        <span id="msg-inicial">Escolha uma foto que esteja aproximada.</span>
+                        <span id="msg-cortar" style="display: none"
+                            >Aproxime a imagem e alinhe pelos seus olhos na foto.</span
+                        >
+                        <span id="msg-final" style="display: none">Parabéns, agora é só baixar e compartilhar!</span>
+                    </div>
+                    <button class="btn btn-primary btn-lg" style="display: none" id="btn-cortar">
+                        <i class="fa-solid fa-crop"></i> Cortar Imagem e Gerar Cartaz
                     </button>
                     <a
                         id="downloadLink"
-                        class="btn btn-secondary btn-lg mt-3"
+                        class="btn btn-secondary btn-lg"
                         style="display: none"
                         download="cartaz-euvou.png"
                         ><i class="fa-solid fa-download"></i> Baixar imagem</a

@@ -5,6 +5,9 @@ $(() => {
     let uploadedImage = null;
     let dadosEvento = null;
     let buttonCortar = $('#btn-cortar');
+    let msgCortar = $('#msg-cortar');
+    let msgInicial = $('#msg-inicial');
+    let msgFinal = $('#msg-final');
     let buttonLink = $('#downloadLink');
     let result = $('#resultImage');
 
@@ -59,9 +62,8 @@ $(() => {
     $('#uploadImage').on('change', (e) => {
         const file = e.target.files[0];
 
-        if (file.size > 3000000) {
-            // @todo melhorar alerts
-            window.alert('O arquivo informado é maior de 3MB. Envie um arquivo menor.');
+        if (file.size > 5000000) {
+            window.alert('O arquivo enviado é maior de 5mb. Envie um arquivo menor.');
 
             return;
         }
@@ -80,7 +82,10 @@ $(() => {
                 uploadedImageElement.alt = 'Modelo de Cartaz #EuVou';
                 uploadedImage = uploadedImageElement;
                 result.html(uploadedImage);
+
                 buttonLink.hide();
+                msgInicial.hide();
+                msgCortar.show();
                 buttonCortar.show();
 
                 if (uploadedImage) {
@@ -102,11 +107,9 @@ $(() => {
                         ready: function (event) {
                             // cropper.zoomTo(1);
                         },
-
                         crop: function (event) {
                             cropper.scale(1, 1);
                         },
-
                         zoom: function (event) {
                             if (event.detail.oldRatio === 1) {
                                 event.preventDefault();
@@ -128,7 +131,10 @@ $(() => {
                         const mergedImage = new Image();
                         mergedImage.src = canvas.toDataURL('image/png');
                         result.html(mergedImage);
+
+                        msgCortar.hide();
                         buttonCortar.hide();
+                        msgFinal.show();
                         buttonLink.attr('href', mergedImage.src).show();
                     });
                 }
