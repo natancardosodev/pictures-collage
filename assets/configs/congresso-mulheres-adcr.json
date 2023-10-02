@@ -1,8 +1,7 @@
 {
     "data": {
-        "title": "27º Congresso de Mulheres ADCR",
+        "title": "27º Congresso <br class='d-md-none'>de Mulheres ADCR",
         "date": "19 a 22 de outubro de 2023",
-        "location": "ADCR Sede em João Pessoa/PB",
         "link": "https://www.instagram.com/ministdemulheresadcr_oficial/"
     },
     "sizes": {
@@ -10,8 +9,8 @@
         "height": 1170
     },
     "colors": {
-        "primary": "#0052ad",
+        "primary": "#0052B4",
         "secondary": "#2983b4",
-        "text": "#222222"
+        "text": "#ffffff"
     }
 }

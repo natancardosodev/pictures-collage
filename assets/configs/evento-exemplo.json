@@ -1,0 +1,16 @@
+{
+    "data": {
+        "title": "Evento Exemplo",
+        "date": "10 a 15 de junho",
+        "link": null
+    },
+    "sizes": {
+        "width": 1080,
+        "height": 1080
+    },
+    "colors": {
+        "primary": "#2A3B62",
+        "secondary": "#2983b4",
+        "text": "#ffffff"
+    }
+}
