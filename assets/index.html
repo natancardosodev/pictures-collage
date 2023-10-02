@@ -4,9 +4,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Criar Cartaz #EuVou</title>
-        <link rel="stylesheet" href="/public/css/style.css" />
-        <link rel="stylesheet" href="/public/css/cropper.min.css" />
-        <title>Cartaz #EuVou</title>
         <meta name="title" content="Criar Cartaz #EuVou para Eventos" />
         <meta name="description" content="Gerador/Colagem de imagens de cartazes #EuVou para eventos." />
         <meta name="keywords" content="cartaz euvou, gerador de cartaz, colagem de imagens" />
@@ -16,6 +13,7 @@
         <meta name="author" content="Natan Cardoso Dev" />
         <link rel="icon" type="image/x-icon" href="/public/assets/images/favicon.ico" />
         <link rel="stylesheet" href="/public/css/style.css" />
+        <link rel="stylesheet" href="/public/css/cropper.min.css" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=analyticsID"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -28,18 +26,18 @@
     </head>
 
     <body>
+        <header>
+            <div id="border-secondary"></div>
+            <div id="content-evento">
+                <a href="#" id="link-evento" target="_blank" title="Saiba mais">
+                    <h3 id="title"></h3>
+                    <p id="date"></p>
+                </a>
+            </div>
+        </header>
         <main>
             <div class="mb-5 text-center" id="wrapper">
-                <span id="nameEvent" class="mx-auto fs-6 text-muted fst-italic"></span>
-                <img
-                    src="#"
-                    id="fluxo-colagem"
-                    alt="Fluxo da colagem do cartaz #EuVou"
-                    class="img-fluid"
-                    width="100%"
-                    height="100%"
-                />
-                <h1 class="col-lg-7 mx-auto display-5 my-4 fw-bold text-body-emphasis">
+                <h1 class="col-lg-7 mx-auto display-5 mb-4 fw-bold text-body-emphasis">
                     Escolha sua foto e faça o Cartaz #EuVou
                 </h1>
                 <input
@@ -62,7 +60,9 @@
                         ><i class="fa-solid fa-download"></i> Baixar imagem</a
                     >
                 </div>
-                <div id="resultImage"></div>
+                <div id="resultImage">
+                    <div class="item"></div>
+                </div>
             </div>
             <div class="px-4 py-5 my-5 text-center" id="msg-error" style="display: none">
                 <h1 class="display-6 fw-bold text-body-emphasis mb-4">Modelo de cartaz não encontrado!</h1>
@@ -74,39 +74,56 @@
                 >
             </div>
             <footer>
-                <p class="d-inline-flex gap-1">
+                <!-- <p class="d-inline-flex gap-1">
                     <a class="btn btn-terciary text-body-secondary" id="btnCreditos" href="#creditos" role="button">
                         Informações/FAQ
                     </a>
-                </p>
-                <div class="collapse text-body-secondary" id="creditosDesc">
+                </p> -->
+                <div class="collapseX text-body-secondary" id="creditosDesc">
                     <div class="card card-body">
-                        <h3>O que faz este site?</h3>
+                        <h3>Sobre o site #EuVou</h3>
                         <p>
                             É um editor de colagem de imagens para confecção de cartazes do tipo #EuVou destinado à
                             divulgação de eventos.
                         </p>
                         <p>O site foi elaborado pelo desenvolvedor Natan Cardoso.</p>
                         <h3>Como usar?</h3>
+                        <h4>Pré-requisitos</h4>
                         <p>
-                            Clique no botão "Escolher Arquivo", dê permissão para envio caso esteja no celular, procure
-                            a imagem e clique em algum botão como Concluído/Abrir.
+                            Antes de enviar a foto verifique se ela está na sua galeria de imagens. Por exemplo se
+                            estiver apenas no WhatsApp terá que <b>Salvar a imagem</b> antes.
                         </p>
+                        <p>Escolha uma imagem que você esteja bem aproximada.</p>
+                        <h4>Escolha a foto</h4>
+                        <p>Para iniciar, clique no botão <b>Escolher Arquivo</b>, dê permissão caso precise.</p>
+                        <p>Procure a imagem e clique em algum botão como <b>Concluído/Abrir</b>.</p>
                         <p>
-                            Enviada a imagem basta clicar em Baixar e depois no botão de compartilhar enviar para a rede
-                            social desejada.
+                            Caso esteja no <b>iPhone (iOS)</b> clique em <b>Escolher Arquivo</b>, depois
+                            <b>Fototeca</b>, ao selecionar a imagem em <b>Tamanho Real</b> e defina <b>Grande</b> e
+                            depois clique em <b>Escolher</b>.
+                        </p>
+                        <h4>Corte a imagem</h4>
+                        <p>
+                            <b>Arraste</b> para escolher a melhor posição. Para um melhor ângulo
+                            <b>alinhe os olhos</b> à linha central.
+                        </p>
+                        <p>Agora clique em <b>Cortar Imagem</b> e pronto só compartilhar.</p>
+                        <h4>Finalização</h4>
+                        <p>
+                            Estando no celular poderá pressionar a foto finalizada para compartilhar ou clicar em
+                            <b>Baixar Imagem</b> e verá na sua galeria de fotos.
                         </p>
                         <h3>Para onde vai os arquivos enviados?</h3>
                         <p>
                             As fotos enviadas e geradas não são enviadas para nenhum servidor de internet, ficam apenas
                             no armazenamento temporário do seu navegador.
                         </p>
-                        <h3>Deseja ter seu evento aqui?</h3>
+                        <!-- <h3>Deseja ter seu evento aqui?</h3>
                         <p>
                             Entre em
                             <a href="https://wa.link/30h8x7" target="_blank">contato com o desenvolvedor</a> e consulte
                             os requisitos.
-                        </p>
+                        </p> -->
                     </div>
                 </div>
             </footer>

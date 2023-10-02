@@ -1,5 +1,6 @@
 @import '~bootstrap/dist/css/bootstrap';
 @import '~@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '~@fortawesome/fontawesome-free/css/brands.css';
 @import '~@fortawesome/fontawesome-free/css/solid.css';
 
 body {
@@ -11,7 +12,17 @@ main {
     box-shadow: 0 0 10px #cccccc;
     margin: 0 auto;
     max-width: 960px;
-    padding: 2em;
+    padding: 1.6em;
+}
+
+#resultImage {
+    display: flex;
+    flex-flow: column;
+
+    .item {
+        display: flex;
+        flex: 1;
+    }
 }
 
 #resultImage img,
@@ -23,4 +34,43 @@ main {
 #uploadImage {
     background: #dedede;
     border-color: #787878;
+}
+
+#border-secondary {
+    background: #505050;
+    height: 15px;
+    position: relative;
+    width: 100%;
+}
+
+#content-evento {
+    background: #303030;
+    color: #ffffff;
+    min-height: 30px;
+    padding: 1em;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    a {
+        text-decoration: none;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    #title {
+        font-size: 1.7em;
+    }
+
+    #date {
+        font-size: 1.4em;
+        font-weight: bold;
+    }
+
+    #location {
+        font-size: 1.1em;
+        font-style: italic;
+    }
 }
