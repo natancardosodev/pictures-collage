@@ -49,6 +49,10 @@ module.exports = {
                 {
                     from: 'node_modules/cropperjs/dist/cropper.min.js',
                     to: 'js'
+                },
+                {
+                    from: 'assets/configs/**/*.json',
+                    to: ''
                 }
             ]
         })

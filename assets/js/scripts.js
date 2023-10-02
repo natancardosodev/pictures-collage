@@ -24,14 +24,12 @@ $(() => {
             return;
         }
 
-        fetch(`/assets/configs/${eventName}.json`)
+        fetch(`./assets/configs/${eventName}.json`)
             .then((response) => response.json())
             .then((response) => {
                 dadosEvento = response;
                 localStorage.setItem(eventName, btoa(JSON.stringify(dadosEvento)));
-                if (dadosEvento) {
-                    setDadosEvento();
-                }
+                setDadosEvento();
             });
     };
 
@@ -41,15 +39,20 @@ $(() => {
     };
 
     function setDadosEvento() {
-        predefinedImage.alt = dadosEvento.data.title;
-        predefinedImage.width = dadosEvento.sizes.width;
-        predefinedImage.height = dadosEvento.sizes.height;
-        $('#border-secondary').css('background-color', dadosEvento.colors.secondary);
-        $('#content-evento').css('background-color', dadosEvento.colors.primary);
-        $('#title').html(dadosEvento.data.title);
-        $('#date').html(dadosEvento.data.date);
-        $('#link-evento').attr('href', dadosEvento.data.link).css('color', dadosEvento.colors.text);
-        $('h4').css('color', dadosEvento.colors.primary);
+        if (dadosEvento) {
+            window.document.title += ' - ' + dadosEvento.data.shortTitle;
+            predefinedImage.alt = dadosEvento.data.title;
+            predefinedImage.width = dadosEvento.sizes.width;
+            predefinedImage.height = dadosEvento.sizes.height;
+            $('#border-secondary').css('background-color', dadosEvento.colors.secondary);
+            $('#content-evento').css('background-color', dadosEvento.colors.primary);
+            $('#title').html(dadosEvento.data.title);
+            $('#date').html(dadosEvento.data.date);
+            $('#link-evento').attr('href', dadosEvento.data.link).css('color', dadosEvento.colors.text);
+            $('h4').css('color', dadosEvento.colors.primary);
+        } else {
+            localStorage.removeItem(eventName);
+        }
     }
 
     // Manipule o upload da imagem
