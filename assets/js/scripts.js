@@ -68,8 +68,8 @@ $(() => {
             return;
         }
 
-        if (!['image/heif', 'image/heic', 'image/jpg', 'image/jpeg', 'image/png'].includes(file.type)) {
-            window.alert('Apenas arquivos de imagem são aceitos, como jpg.');
+        if (!['image/webp', 'image/heif', 'image/heic', 'image/jpg', 'image/jpeg', 'image/png'].includes(file.type)) {
+            window.alert('Apenas arquivos de imagem são aceitos.');
 
             return;
         }
