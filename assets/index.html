@@ -48,25 +48,27 @@
                     accept="image/*"
                     class="mb-4"
                 />
-                <div class="d-grid mb-3">
+                <div class="d-grid">
                     <div class="alert alert-warning mt-3 fs-6" role="alert">
                         <span id="msg-inicial">Escolha uma foto que esteja aproximada.</span>
                         <span id="msg-cortar" style="display: none"
                             >Arraste para a melhor posição e <br class="d-md-none" />alinhe pelos seus olhos na
                             foto.</span
                         >
-                        <span id="msg-final" style="display: none">Parabéns, agora é só baixar e compartilhar!</span>
+                        <span id="msg-final" style="display: none"
+                            >Pronto, agora é só baixar e compartilhar!<br />Poderá fazer pressionando a imagem.</span
+                        >
                         <span id="msg-final-ios" style="display: none"
                             >Pronto, agora pressione a imagem e <br />
-                            Compartilhe ou Salve no App Fotos</span
+                            Compartilhe ou Salve no App Fotos.</span
                         >
                     </div>
-                    <button class="btn btn-primary btn-lg" style="display: none" id="btn-cortar">
+                    <button class="btn btn-primary btn-lg mb-3" style="display: none" id="btn-cortar">
                         <i class="fa-solid fa-crop"></i> Cortar Imagem e Gerar Cartaz
                     </button>
                     <a
                         id="downloadLink"
-                        class="btn btn-secondary btn-lg"
+                        class="btn btn-secondary btn-lg mb-3"
                         style="display: none"
                         download="cartaz-euvou.png"
                         ><i class="fa-solid fa-download"></i> Baixar imagem</a
