@@ -38,7 +38,7 @@
         <main>
             <div class="mb-5 text-center" id="wrapper">
                 <h1 class="col-lg-7 mx-auto display-5 mb-4 fw-bold text-body-emphasis">
-                    Escolha sua foto e faça o Cartaz #EuVou
+                    Escolha sua foto e <br />Faça o Cartaz #EuVou
                 </h1>
                 <input
                     type="file"
@@ -56,6 +56,10 @@
                             foto.</span
                         >
                         <span id="msg-final" style="display: none">Parabéns, agora é só baixar e compartilhar!</span>
+                        <span id="msg-final-ios" style="display: none"
+                            >Pronto, agora pressione a imagem e <br />
+                            Compartilhe ou Salve no App Fotos</span
+                        >
                     </div>
                     <button class="btn btn-primary btn-lg" style="display: none" id="btn-cortar">
                         <i class="fa-solid fa-crop"></i> Cortar Imagem e Gerar Cartaz
@@ -82,12 +86,13 @@
                 >
             </div>
             <footer>
-                <!-- <p class="d-inline-flex gap-1">
+                <p class="d-relative text-center gap-1">
                     <a class="btn btn-terciary text-body-secondary" id="btnCreditos" href="#creditos" role="button">
-                        Informações/FAQ
+                        Desenvolvido por Natan Cardoso
+                        <br /><span class="text-decoration-underline fst-italic">Mais Informações ...</span>
                     </a>
-                </p> -->
-                <div class="collapseX text-body-secondary" id="creditosDesc">
+                </p>
+                <div class="collapse text-body-secondary" id="creditosDesc">
                     <div class="card card-body">
                         <h3>Sobre o site #EuVou</h3>
                         <p>
@@ -129,15 +134,14 @@
                             As fotos enviadas e geradas não são enviadas para nenhum servidor de internet, ficam apenas
                             no <b>armazenamento temporário</b> do seu navegador.
                         </p>
-                        <!-- <h3>Deseja ter seu evento aqui?</h3>
+                        <h3>Deseja ter seu evento aqui?</h3>
                         <p>
                             Entre em
                             <a href="https://wa.link/30h8x7" target="_blank">contato com o desenvolvedor</a> e consulte
                             os requisitos.
-                        </p> -->
+                        </p>
                     </div>
                 </div>
-                <p class="pt-3 text-center text-secondary">Desenvolvido por Natan Cardoso</p>
             </footer>
         </main>
 
