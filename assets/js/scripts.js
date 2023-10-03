@@ -8,8 +8,10 @@ $(() => {
     let msgCortar = $('#msg-cortar');
     let msgInicial = $('#msg-inicial');
     let msgFinal = $('#msg-final');
+    let msgFinaliOS = $('#msg-final-ios');
     let buttonLink = $('#downloadLink');
     let result = $('#resultImage');
+    const isIphone = window.navigator.userAgent.toLowerCase().indexOf('iphone') > -1;
 
     // Carregue a imagem predefinida
     const predefinedImage = new Image();
@@ -134,8 +136,13 @@ $(() => {
 
                         msgCortar.hide();
                         buttonCortar.hide();
-                        msgFinal.show();
-                        buttonLink.attr('href', mergedImage.src).show();
+
+                        if (!isIphone) {
+                            msgFinal.show();
+                            buttonLink.attr('href', mergedImage.src).show();
+                        } else {
+                            msgFinaliOS.show();
+                        }
                     });
                 }
             };
