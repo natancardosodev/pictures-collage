@@ -50,6 +50,7 @@ $(() => {
             predefinedImage.width = dadosEvento.sizes.width;
             predefinedImage.height = dadosEvento.sizes.height;
             $('#border-secondary').css('background-color', dadosEvento.colors.secondary);
+            $('#date').css('color', dadosEvento.colors.secondary);
             $('#content-evento').css('background-color', dadosEvento.colors.primary);
             $('#title').html(dadosEvento.data.title);
             $('#date').html(dadosEvento.data.date);
