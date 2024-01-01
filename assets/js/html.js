@@ -1,3 +1,5 @@
-import page from '../index.html';
+import pageEuVou from '../cartaz-euvou.html';
+import pageNiver from '../cartaz-aniversariante.html';
 
-document.currentScript.insertAdjacentHTML('beforebegin', page);
+document.currentScript.insertAdjacentHTML('beforebegin', pageEuVou);
+document.currentScript.insertAdjacentHTML('beforebegin', pageNiver);

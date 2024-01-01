@@ -1,0 +1,61 @@
+{
+    "data": {
+        "shortTitle": "Banda Filarmônica Canaã",
+        "title": "Banda Filarmônica Canaã",
+        "date": null,
+        "link": null
+    },
+    "sizes": {
+        "width": 1080,
+        "height": 1920
+    },
+    "colors": {
+        "primary": "#7e0001",
+        "secondary": "#9d4241",
+        "text": "#ffffff"
+    },
+    "niver": {
+        "aniversariante": [
+            {
+                "x": 540,
+                "y": 1555
+            },
+            {
+                "x": 200,
+                "y": 300
+            },
+            {
+                "x": 200,
+                "y": 300
+            }
+        ],
+        "subtitle": [
+            {
+                "x": 540,
+                "y": 1475
+            },
+            {
+                "x": 200,
+                "y": 300
+            },
+            {
+                "x": 200,
+                "y": 300
+            }
+        ],
+        "data": [
+            {
+                "x": 863,
+                "y": 1375
+            },
+            {
+                "x": 200,
+                "y": 300
+            },
+            {
+                "x": 200,
+                "y": 300
+            }
+        ]
+    }
+}
