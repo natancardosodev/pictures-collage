@@ -56,6 +56,7 @@ $(() => {
             predefinedImage.width = dadosCartaz.sizes.width;
             predefinedImage.height = dadosCartaz.sizes.height;
             $('#border-secondary').css('background-color', dadosCartaz.colors.secondary);
+            $('#date').css('color', dadosCartaz.colors.secondary);
             $('#content-evento').css('background-color', dadosCartaz.colors.primary);
             $('#title').html(dadosCartaz.data.title);
             $('#date').html(dadosCartaz.data.date);
