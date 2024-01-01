@@ -17,7 +17,7 @@ module.exports = {
     entry: entry(
         entry.basePath('assets'),
         './assets/**/*.{js,scss,json,png,jpg,gif,ico,pdf,eot,woff,woff2,ttf}',
-        './assets/index.html'
+        './assets/*.html'
     ),
     output: {
         path: path.resolve(__dirname, 'public'),
@@ -36,8 +36,14 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: 'Cartaz #EuVou',
-            filename: 'index.html',
-            template: './assets/index.html',
+            filename: 'cartaz-euvou.html',
+            template: './assets/cartaz-euvou.html',
+            chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Cartaz Aniversariante',
+            filename: 'cartaz-aniversariante.html',
+            template: './assets/cartaz-aniversariante.html',
             chunks: ['index']
         }),
         new CopyPlugin({

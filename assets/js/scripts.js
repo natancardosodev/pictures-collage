@@ -3,7 +3,7 @@ import Cropper from 'cropperjs';
 
 $(() => {
     let uploadedImage = null;
-    let dadosEvento = null;
+    let dadosCartaz = null;
     let buttonCortar = $('#btn-cortar');
     let msgCortar = $('#msg-cortar');
     let msgInicial = $('#msg-inicial');
@@ -11,30 +11,36 @@ $(() => {
     let msgFinaliOS = $('#msg-final-ios');
     let buttonLink = $('#downloadLink');
     let result = $('#resultImage');
+    let modeloNiver = $('#field-modelo');
     const isIphone = window.navigator.userAgent.toLowerCase().indexOf('iphone') > -1;
 
     // Carregue a imagem predefinida
     const predefinedImage = new Image();
     const urlParams = new URLSearchParams(window.location.search);
     const eventName = urlParams.get('evento');
-    predefinedImage.src = `./assets/images/${eventName}.png`;
+    const typeCartaz = urlParams.get('cartaz');
+    predefinedImage.src = `./assets/images/${typeCartaz}/${eventName}${typeCartaz === 'niver' ? '-0' : ''}.png`;
+
+    modeloNiver.on('change', () => {
+        predefinedImage.src = `./assets/images/${typeCartaz}/${eventName}-${modeloNiver[0].value}.png`;
+    });
 
     predefinedImage.onload = function () {
         $('#resultImage').html(predefinedImage);
 
         if (localStorage.getItem(eventName) && localStorage.getItem(eventName).length) {
-            dadosEvento = JSON.parse(atob(localStorage.getItem(eventName)));
-            setDadosEvento();
+            dadosCartaz = JSON.parse(atob(localStorage.getItem(eventName)));
+            setDadosCartaz();
 
             return;
         }
 
-        fetch(`./assets/configs/${eventName}.json`)
+        fetch(`./assets/configs/${typeCartaz}/${eventName}.json`)
             .then((response) => response.json())
             .then((response) => {
-                dadosEvento = response;
-                localStorage.setItem(eventName, btoa(JSON.stringify(dadosEvento)));
-                setDadosEvento();
+                dadosCartaz = response;
+                localStorage.setItem(eventName, btoa(JSON.stringify(dadosCartaz)));
+                setDadosCartaz();
             });
     };
 
@@ -43,20 +49,58 @@ $(() => {
         $('#msg-error').show();
     };
 
-    function setDadosEvento() {
-        if (dadosEvento) {
-            window.document.title += ' - ' + dadosEvento.data.shortTitle;
-            predefinedImage.alt = dadosEvento.data.title;
-            predefinedImage.width = dadosEvento.sizes.width;
-            predefinedImage.height = dadosEvento.sizes.height;
-            $('#border-secondary').css('background-color', dadosEvento.colors.secondary);
-            $('#content-evento').css('background-color', dadosEvento.colors.primary);
-            $('#title').html(dadosEvento.data.title);
-            $('#date').html(dadosEvento.data.date);
-            $('#link-evento').attr('href', dadosEvento.data.link).css('color', dadosEvento.colors.text);
-            $('h4').css('color', dadosEvento.colors.primary);
+    function setDadosCartaz() {
+        if (dadosCartaz) {
+            window.document.title += ' - ' + dadosCartaz.data.shortTitle;
+            predefinedImage.alt = dadosCartaz.data.title;
+            predefinedImage.width = dadosCartaz.sizes.width;
+            predefinedImage.height = dadosCartaz.sizes.height;
+            $('#border-secondary').css('background-color', dadosCartaz.colors.secondary);
+            $('#content-evento').css('background-color', dadosCartaz.colors.primary);
+            $('#title').html(dadosCartaz.data.title);
+            $('#date').html(dadosCartaz.data.date);
+            $('#link-evento').attr('href', dadosCartaz.data.link).css('color', dadosCartaz.colors.text);
+            $('h4').css('color', dadosCartaz.colors.primary);
         } else {
             localStorage.removeItem(eventName);
+        }
+    }
+
+    function dateFix(dateInput) {
+        return new Date(dateInput.replaceAll('-', '/')).toLocaleDateString().slice(0, 5);
+    }
+
+    function generateTextNiver(ctx) {
+        ctx.textAlign = 'center';
+        let nomeNiver = $('#field-nome')[0].value;
+        let subtitleNiver = $('#field-subtitle')[0].value;
+        let dataNiver = dateFix($('#field-data')[0].value);
+        let modeloNiver = $('#field-modelo')[0].value;
+
+        if (nomeNiver) {
+            ctx.font = 'bold 75px sans-serif';
+            ctx.fillStyle = dadosCartaz.colors.primary;
+            ctx.fillText(
+                nomeNiver,
+                dadosCartaz.niver.aniversariante[modeloNiver]['x'],
+                dadosCartaz.niver.aniversariante[modeloNiver]['y']
+            );
+        }
+
+        if (subtitleNiver) {
+            ctx.font = 'italic normal 50px serif';
+            ctx.fillStyle = '#000';
+            ctx.fillText(
+                subtitleNiver,
+                dadosCartaz.niver.subtitle[modeloNiver]['x'],
+                dadosCartaz.niver.subtitle[modeloNiver]['y']
+            );
+        }
+
+        if (dataNiver) {
+            ctx.font = 'bold 55px sans-serif';
+            ctx.fillStyle = '#000';
+            ctx.fillText(dataNiver, dadosCartaz.niver.data[modeloNiver]['x'], dadosCartaz.niver.data[modeloNiver]['y']);
         }
     }
 
@@ -79,7 +123,7 @@ $(() => {
         if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
-                const uploadedImageElement = new Image(dadosEvento.sizes.width, dadosEvento.sizes.height);
+                const uploadedImageElement = new Image(dadosCartaz.sizes.width, dadosCartaz.sizes.height);
                 uploadedImageElement.src = e.target.result;
                 uploadedImageElement.alt = 'Modelo de Cartaz #EuVou';
                 uploadedImage = uploadedImageElement;
@@ -98,7 +142,7 @@ $(() => {
                     const ctx = canvas.getContext('2d');
 
                     var cropper = new Cropper(uploadedImage, {
-                        aspectRatio: 1 / (dadosEvento.sizes.height / dadosEvento.sizes.width),
+                        aspectRatio: 1 / (dadosCartaz.sizes.height / dadosCartaz.sizes.width),
                         viewMode: 3,
                         dragMode: 'move',
                         center: true,
@@ -125,10 +169,14 @@ $(() => {
                             cropper.getCroppedCanvas(),
                             0,
                             0,
-                            dadosEvento.sizes.width,
-                            dadosEvento.sizes.height
+                            dadosCartaz.sizes.width,
+                            dadosCartaz.sizes.height
                         );
-                        ctx.drawImage(predefinedImage, 0, 0, dadosEvento.sizes.width, dadosEvento.sizes.height);
+                        ctx.drawImage(predefinedImage, 0, 0, dadosCartaz.sizes.width, dadosCartaz.sizes.height);
+
+                        if (typeCartaz === 'niver') {
+                            generateTextNiver(ctx);
+                        }
 
                         const mergedImage = new Image();
                         mergedImage.src = canvas.toDataURL('image/png');

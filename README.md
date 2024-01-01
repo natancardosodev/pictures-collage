@@ -15,7 +15,8 @@ _Fotografia de Dragos Gontariu na [Unplash](https://unsplash.com/)_
 
 ## Demonstrativo
 
--   https://cartaz-euvou.netlify.app/?evento=evento-exemplo
+-   https://cartaz-euvou.netlify.app/cartaz-euvou.html?evento=evento-exemplo&cartaz=euvou
+-   https://cartaz-euvou.netlify.app/cartaz-aniversariante.html?evento=evento-exemplo&cartaz=niver
 
 ## Features
 
@@ -43,9 +44,11 @@ npm run start ## modo watch
 
 -   **Opção 1** - Modo Build
     -   Rodar `npm run build && npm run server`
-    -   E Acessar http://127.0.0.1:5500/index.html?evento=evento-exemplo
+    -   E Acessar http://127.0.0.1:5500/cartaz-euvou.html?evento=evento-exemplo&cartaz=euvou
+    -   E Acessar http://127.0.0.1:5500/cartaz-aniversariante.html?evento=evento-exemplo&cartaz=niver
 -   **Opção 2** - Modo Watch
     -   Executar `npm run start`
     -   Habilitar a extensão do `VS Code` chamada Live Server `ext install ritwickdey.LiveServer`
-    -   E Acessar http://127.0.0.1:5500/public/index.html?evento=evento-exemplo
+    -   E Acessar http://127.0.0.1:5500/public/cartaz-euvou.html?evento=evento-exemplo&cartaz=euvou
+    -   E Acessar http://127.0.0.1:5500/public/cartaz-aniversariante.html?evento=evento-exemplo&cartaz=niver
     -   _Extra:_ Rodar o `ngrok http 5500` (Caso deseje enviar seu localhost para teste externo)
