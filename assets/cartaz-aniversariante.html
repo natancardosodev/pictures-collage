@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Criar Cartaz #EuVou</title>
-        <meta name="title" content="Criar Cartaz #EuVou para Eventos" />
-        <meta name="description" content="Gerador/Colagem de imagens de cartazes #EuVou para eventos." />
-        <meta name="keywords" content="cartaz euvou, gerador de cartaz, colagem de imagens" />
+        <title>Criar Cartaz Aniversariante</title>
+        <meta name="title" content="Criar Cartaz para aniversariante" />
+        <meta name="description" content="Gerador/Colagem de imagens de cartazes de aniversariante." />
+        <meta name="keywords" content="cartaz aniversariante, gerador de cartaz, colagem de imagens" />
         <meta name="robots" content="index, follow" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="Portuguese" />
@@ -38,16 +38,36 @@
         <main>
             <div class="mb-5 text-center" id="wrapper">
                 <h1 class="col-lg-7 mx-auto display-5 mb-4 fw-bold text-body-emphasis">
-                    Escolha sua foto e <br />Faça o Cartaz #EuVou
+                    Gerar Cartaz para o <br />Aniversariante
                 </h1>
-                <input
-                    type="file"
-                    class="form-control"
-                    id="uploadImage"
-                    aria-label="Upload Image"
-                    accept="image/*"
-                    class="mb-4"
-                />
+                <div class="text-start">
+                    <label class="form-label" for="nome">Nome e sobrenome</label>
+                    <input class="form-control" type="text" name="nome" id="field-nome" /><br />
+
+                    <label class="form-label" for="subtitle">Subtítulo (opcional)</label>
+                    <input class="form-control" type="text" name="subtitle" id="field-subtitle" /><br />
+
+                    <label class="form-label" for="data">Data de aniversário (DD/MM)</label>
+                    <input class="form-control" type="date" name="data" id="field-data" /><br />
+
+                    <label class="form-label" for="modelo">Modelo do cartaz</label>
+                    <select class="form-control" name="modelo" id="field-modelo">
+                        <option value="0" selected>Modelo 1</option>
+                        <option value="1">Modelo 2</option>
+                        <option value="2">Modelo 3</option></select
+                    ><br />
+
+                    <label class="form-label" for="modelo">Foto <i>(Enquadre o rosto na área demarcada)</i></label>
+                    <input
+                        type="file"
+                        class="form-control"
+                        id="uploadImage"
+                        aria-label="Upload Image"
+                        accept="image/*"
+                        class="mb-4"
+                    />
+                </div>
+
                 <div class="d-grid">
                     <div class="alert alert-warning mt-3 fs-6" role="alert">
                         <span id="msg-inicial">Escolha uma foto que esteja aproximada.</span>
@@ -70,7 +90,7 @@
                         id="downloadLink"
                         class="btn btn-secondary btn-lg mb-3"
                         style="display: none"
-                        download="cartaz-euvou.png"
+                        download="cartaz-niver.png"
                         ><i class="fa-solid fa-download"></i> Baixar imagem</a
                     >
                 </div>
@@ -83,7 +103,7 @@
                 <div class="alert alert-warning" role="alert">
                     <h4><i class="fa-solid fa-triangle-exclamation"></i> Verifique o endereço e tente novamente.</h4>
                 </div>
-                <a href="?evento=evento-exemplo" class="btn btn-secondary btn-lg mt-3"
+                <a href="?evento=evento-exemplo&cartaz=niver" class="btn btn-secondary btn-lg mt-3"
                     ><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver exemplo</a
                 >
             </div>
@@ -96,10 +116,10 @@
                 </p>
                 <div class="collapse text-body-secondary" id="creditosDesc">
                     <div class="card card-body">
-                        <h3>Sobre o site #EuVou</h3>
+                        <h3>Sobre o site</h3>
                         <p>
-                            É um editor de colagem de imagens para confecção de cartazes do tipo #EuVou destinado à
-                            divulgação de eventos.
+                            É um editor de colagem de imagens para confecção de cartazes do tipo #EuVou e
+                            Aniversariantes destinado à divulgação de eventos.
                         </p>
                         <h3>Como usar?</h3>
                         <h4>Pré-requisitos</h4>
