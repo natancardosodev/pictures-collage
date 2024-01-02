@@ -10,6 +10,7 @@ $(() => {
     let msgFinal = $('#msg-final');
     let msgFinaliOS = $('#msg-final-ios');
     let buttonLink = $('#downloadLink');
+    let buttonReload = $('#btnReload');
     let result = $('#resultImage');
     let modeloNiver = $('#field-modelo');
     const isIphone = window.navigator.userAgent.toLowerCase().indexOf('iphone') > -1;
@@ -68,7 +69,7 @@ $(() => {
     }
 
     function dateFix(dateInput) {
-        return new Date(dateInput.replaceAll('-', '/')).toLocaleDateString().slice(0, 5);
+        return dateInput ? new Date(dateInput.replaceAll('-', '/')).toLocaleDateString().slice(0, 5) : null;
     }
 
     function generateTextNiver(ctx) {
@@ -186,12 +187,17 @@ $(() => {
                         msgCortar.hide();
                         buttonCortar.hide();
 
+                        $('#field-nome')[0].value = null;
+                        $('#field-subtitle')[0].value = null;
+                        $('#field-data')[0].value = null;
+
                         if (!isIphone) {
                             msgFinal.show();
                             buttonLink.attr('href', mergedImage.src).show();
                         } else {
                             msgFinaliOS.show();
                         }
+                        buttonReload.show();
                     });
                 }
             };
@@ -201,5 +207,9 @@ $(() => {
 
     $('#btnCreditos').on('click', () => {
         $('#creditosDesc').toggle(300);
+    });
+
+    $('#btnReload').on('click', () => {
+        window.location.reload();
     });
 });
