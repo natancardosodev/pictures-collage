@@ -49,6 +49,14 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {
+                    from: 'node_modules/@fortawesome/fontawesome-free/css',
+                    to: 'fontawesome/css'
+                },
+                {
+                    from: 'node_modules/@fortawesome/fontawesome-free/webfonts',
+                    to: 'fontawesome/webfonts'
+                },
+                {
                     from: 'node_modules/cropperjs/dist/cropper.min.css',
                     to: 'css'
                 },
