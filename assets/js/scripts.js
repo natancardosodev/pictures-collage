@@ -48,6 +48,12 @@ $(() => {
     predefinedImage.onerror = () => {
         $('#wrapper').hide();
         $('#msg-error').show();
+        // @todo ajustar index
+        fetch(`./assets/configs/index.json`)
+            .then((response) => response.json())
+            .then((response) => {
+                console.log(response);
+            });
     };
 
     function setDadosCartaz() {
@@ -90,7 +96,7 @@ $(() => {
         }
 
         if (subtitleNiver) {
-            ctx.font = 'italic normal 50px serif';
+            ctx.font = 'italic normal 55px serif';
             ctx.fillStyle = '#000';
             ctx.fillText(
                 subtitleNiver,
@@ -210,6 +216,12 @@ $(() => {
     });
 
     $('#btnReload').on('click', () => {
+        window.location.reload();
+    });
+
+    $('#btnReloadDados').on('click', () => {
+        localStorage.removeItem(eventName);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         window.location.reload();
     });
 });

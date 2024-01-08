@@ -1,0 +1,14 @@
+{
+    "euvou": [
+        {
+            "label": "Congresso Mulheres ADCR",
+            "route": "cartaz-euvou.html?evento=congresso-mulheres-adcr&cartaz=euvou"
+        }
+    ],
+    "niver": [
+        {
+            "label": "Banda Filarmônica Canaã",
+            "route": "cartaz-aniversariante.html?evento=banda-canaa&cartaz=niver"
+        }
+    ]
+}
