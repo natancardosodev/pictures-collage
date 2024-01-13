@@ -11,6 +11,7 @@ $(() => {
     let msgFinaliOS = $('#msg-final-ios');
     let buttonLink = $('#downloadLink');
     let buttonReload = $('#btnReload');
+    let buttonReloadDados = $('#btnReloadDados');
     let result = $('#resultImage');
     let modeloNiver = $('#field-modelo');
     const isIphone = window.navigator.userAgent.toLowerCase().indexOf('iphone') > -1;
@@ -48,11 +49,22 @@ $(() => {
     predefinedImage.onerror = () => {
         $('#wrapper').hide();
         $('#msg-error').show();
-        // @todo ajustar index
         fetch(`./assets/configs/index.json`)
             .then((response) => response.json())
             .then((response) => {
-                console.log(response);
+                let htmlEuvou = response['euvou'].length ? '<br><br><h2>Cartaz Eu Vou</h2><ul>' : '';
+                response['euvou'].forEach((item) => {
+                    htmlEuvou += '<a href="' + item.route + '"><li>' + item.label + '</li></a>';
+                });
+                htmlEuvou += '</ul>';
+                $('#modelos-euvou').html(htmlEuvou);
+
+                let htmlNiver = response['niver'].length ? '<br><br><h2>Cartaz Aniversariante</h2><ul>' : '';
+                response['niver'].forEach((item) => {
+                    htmlNiver += '<a href="' + item.route + '"><li>' + item.label + '</li></a>';
+                });
+                htmlNiver += '</ul>';
+                $('#modelos-niver').html(htmlNiver);
             });
     };
 
@@ -158,10 +170,10 @@ $(() => {
                         minCropBoxHeight: 150,
                         cropBoxMovable: true,
                         cropBoxResizable: true,
-                        ready: function (event) {
+                        ready: function () {
                             // cropper.zoomTo(1);
                         },
-                        crop: function (event) {
+                        crop: function () {
                             cropper.scale(1, 1);
                         },
                         zoom: function (event) {
@@ -204,6 +216,7 @@ $(() => {
                             msgFinaliOS.show();
                         }
                         buttonReload.show();
+                        buttonReloadDados.show();
                     });
                 }
             };
@@ -215,11 +228,11 @@ $(() => {
         $('#creditosDesc').toggle(300);
     });
 
-    $('#btnReload').on('click', () => {
+    buttonReload.on('click', () => {
         window.location.reload();
     });
 
-    $('#btnReloadDados').on('click', () => {
+    buttonReloadDados.on('click', () => {
         localStorage.removeItem(eventName);
         window.scrollTo({ top: 0, behavior: 'smooth' });
         window.location.reload();

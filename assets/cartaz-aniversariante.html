@@ -94,7 +94,10 @@
                         ><i class="fa-solid fa-download"></i> Baixar imagem</a
                     >
                     <a id="btnReload" class="btn btn-terciary btn-lg mb-3" style="display: none"
-                        ><i class="fa-solid fa-arrows-rotate"></i> Gerar outra imagem</a
+                        ><i class="fa-solid fa-plus"></i> Gerar outra imagem</a
+                    >
+                    <a id="btnReloadDados" class="btn btn-terciary btn-lg mb-3" style="display: none"
+                        ><i class="fa-solid fa-arrows-rotate"></i> Recarregar Dados</a
                     >
                 </div>
                 <div id="resultImage">
@@ -102,13 +105,9 @@
                 </div>
             </div>
             <div class="px-4 py-5 my-5 text-center" id="msg-error" style="display: none">
-                <h1 class="display-6 fw-bold text-body-emphasis mb-4">Modelo de cartaz não encontrado!</h1>
-                <div class="alert alert-warning" role="alert">
-                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Verifique o endereço e tente novamente.</h4>
-                </div>
-                <a href="?evento=evento-exemplo&cartaz=niver" class="btn btn-secondary btn-lg mt-3"
-                    ><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver exemplo</a
-                >
+                <h1 class="display-6 fw-bold text-body-emphasis mb-4">Modelos de cartazes disponíveis</h1>
+                <div id="modelos-euvou"></div>
+                <div id="modelos-niver"></div>
             </div>
             <footer>
                 <p class="d-relative text-center gap-1">
@@ -164,11 +163,6 @@
                             Entre em
                             <a href="https://wa.link/30h8x7" target="_blank">contato com o desenvolvedor</a> e consulte
                             os requisitos.
-                        </p>
-                        <p>
-                            <a id="btnReloadDados" class="btn btn-terciary btn-lg mb-3"
-                                ><i class="fa-solid fa-arrows-rotate"></i> Recarregar Dados</a
-                            >
                         </p>
                     </div>
                 </div>
