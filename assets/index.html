@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Criar Cartaz #EuVou</title>
-        <meta name="title" content="Criar Cartaz #EuVou para Eventos" />
-        <meta name="description" content="Gerador/Colagem de imagens de cartazes #EuVou para eventos." />
-        <meta name="keywords" content="cartaz euvou, gerador de cartaz, colagem de imagens" />
+        <title>Criar Cartaz EuVou e Niver</title>
+        <meta name="title" content="Criar Cartaz para Eventos" />
+        <meta name="description" content="Gerador/Colagem de imagens de cartazes para eventos." />
+        <meta name="keywords" content="cartaz, gerador de cartaz, colagem de imagens" />
         <meta name="robots" content="index, follow" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="Portuguese" />
@@ -36,55 +36,7 @@
             </div>
         </header>
         <main>
-            <div class="mb-5 text-center" id="wrapper">
-                <h1 class="col-lg-7 mx-auto display-5 mb-4 fw-bold text-body-emphasis">
-                    Escolha sua foto e <br />Faça o Cartaz #EuVou
-                </h1>
-                <input
-                    type="file"
-                    class="form-control"
-                    id="uploadImage"
-                    aria-label="Upload Image"
-                    accept="image/*"
-                    class="mb-4"
-                />
-                <div class="d-grid">
-                    <div class="alert alert-warning mt-3 fs-6" role="alert">
-                        <span id="msg-inicial">Escolha uma foto que esteja aproximada.</span>
-                        <span id="msg-cortar" style="display: none"
-                            >Arraste para a melhor posição e <br class="d-md-none" />alinhe pelos seus olhos na
-                            foto.</span
-                        >
-                        <span id="msg-final" style="display: none"
-                            >Pronto, agora é só baixar e compartilhar!<br />Poderá fazer pressionando a imagem.</span
-                        >
-                        <span id="msg-final-ios" style="display: none"
-                            >Pronto, agora pressione a imagem e <br />
-                            Compartilhe ou Salve no App Fotos.</span
-                        >
-                    </div>
-                    <button class="btn btn-primary btn-lg mb-3" style="display: none" id="btn-cortar">
-                        <i class="fa-solid fa-crop"></i> Cortar Imagem e Gerar Cartaz
-                    </button>
-                    <a
-                        id="downloadLink"
-                        class="btn btn-secondary btn-lg mb-3"
-                        style="display: none"
-                        download="cartaz-euvou.png"
-                        ><i class="fa-solid fa-download"></i> Baixar imagem</a
-                    >
-                    <a id="btnReload" class="btn btn-terciary btn-lg mb-3" style="display: none"
-                        ><i class="fa-solid fa-plus"></i> Gerar outra imagem</a
-                    >
-                    <a id="btnReloadDados" class="btn btn-terciary btn-lg mb-3" style="display: none"
-                        ><i class="fa-solid fa-arrows-rotate"></i> Recarregar Dados</a
-                    >
-                </div>
-                <div id="resultImage">
-                    <div class="item"></div>
-                </div>
-            </div>
-            <div class="px-4 py-5 my-5 text-center" id="msg-error" style="display: none">
+            <div class="px-4 py-5 my-5 text-center" id="msg-error">
                 <h1 class="display-6 fw-bold text-body-emphasis mb-4">Modelos de cartazes disponíveis</h1>
                 <div id="modelos-euvou"></div>
                 <div id="modelos-niver"></div>
