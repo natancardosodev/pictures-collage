@@ -74,3 +74,10 @@ main {
         font-style: italic;
     }
 }
+
+ul {
+    list-style-type: disclosure-closed;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: start;
+}

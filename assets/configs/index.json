@@ -1,6 +1,10 @@
 {
     "euvou": [
         {
+            "label": "Evento Exemplo",
+            "route": "cartaz-euvou.html?evento=evento-exemplo&cartaz=euvou"
+        },
+        {
             "label": "Congresso Mulheres ADCR",
             "route": "cartaz-euvou.html?evento=congresso-mulheres-adcr&cartaz=euvou"
         }
