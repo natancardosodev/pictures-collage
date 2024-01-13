@@ -35,6 +35,12 @@ module.exports = {
             'window.jQuery': 'jquery'
         }),
         new HtmlWebpackPlugin({
+            title: 'Criar Cartaz EuVou e Niver',
+            filename: 'index.html',
+            template: './assets/index.html',
+            chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
             title: 'Cartaz #EuVou',
             filename: 'cartaz-euvou.html',
             template: './assets/cartaz-euvou.html',

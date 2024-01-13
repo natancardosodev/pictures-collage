@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Criar Cartaz EuVou e Niver</title>
+        <meta name="title" content="Criar Cartaz para Eventos" />
+        <meta name="description" content="Gerador/Colagem de imagens de cartazes para eventos." />
+        <meta name="keywords" content="cartaz, gerador de cartaz, colagem de imagens" />
+        <meta name="robots" content="index, follow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="Portuguese" />
+        <meta name="author" content="Natan Cardoso Dev" />
+        <link rel="icon" type="image/x-icon" href="/public/assets/images/favicon.ico" />
+        <link rel="stylesheet" href="/public/css/style.css" />
+        <link rel="stylesheet" href="/public/css/cropper.min.css" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=analyticsID"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'analyticsID');
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div id="border-secondary"></div>
+            <div id="content-evento">
+                <a href="#" id="link-evento" target="_blank" title="Saiba mais">
+                    <h3 id="title"></h3>
+                    <p id="date"></p>
+                </a>
+            </div>
+        </header>
+        <main>
+            <div class="px-4 py-5 my-5 text-center" id="msg-error">
+                <h1 class="display-6 fw-bold text-body-emphasis mb-4">Modelos de cartazes disponíveis</h1>
+                <div id="modelos-euvou"></div>
+                <div id="modelos-niver"></div>
+            </div>
+            <footer>
+                <p class="d-relative text-center gap-1">
+                    <a class="btn btn-terciary text-body-secondary" id="btnCreditos" href="#creditos" role="button">
+                        Desenvolvido por Natan Cardoso
+                        <br /><span class="text-decoration-underline fst-italic">Mais Informações ...</span>
+                    </a>
+                </p>
+                <div class="collapse text-body-secondary" id="creditosDesc">
+                    <div class="card card-body">
+                        <h3>Sobre o site</h3>
+                        <p>
+                            É um editor de colagem de imagens para confecção de cartazes do tipo #EuVou e
+                            Aniversariantes destinado à divulgação de eventos.
+                        </p>
+                        <h3>Como usar?</h3>
+                        <h4>Pré-requisitos</h4>
+                        <p>Escolha uma imagem que você esteja bem aproximada.</p>
+                        <p>
+                            Verifique onde está essa imagem, pois se estiver apenas no WhatsApp terá que
+                            <b>Salvar a imagem</b> antes.
+                        </p>
+                        <h4>Escolha a foto</h4>
+                        <p>Para iniciar, clique no botão <b>Escolher Arquivo</b>, dê permissão caso precise.</p>
+                        <p>Procure a imagem e clique em algum botão como <b>Concluído/Abrir</b>.</p>
+                        <p>
+                            Caso esteja no <b>iPhone (iOS)</b> clique em <b>Escolher Arquivo</b>, depois
+                            <b>Fototeca</b>.
+                        </p>
+                        <p>
+                            Ao selecionar a imagem em <b>Tamanho Real</b> e defina <b>Grande</b> e depois clique em
+                            <b>Escolher</b>.
+                        </p>
+                        <h4>Corte a imagem</h4>
+                        <p>
+                            <b>Arraste</b> para escolher a melhor posição. Para um melhor ângulo
+                            <b>alinhe os olhos</b> à linha central.
+                        </p>
+                        <p>Poderá <b>diminuir ou aumentar o zoom</b> arrastando as pontas.</p>
+                        <p>Agora clique em <b>Cortar Imagem</b> e pronto só compartilhar.</p>
+                        <h4>Finalização</h4>
+                        <p>
+                            Estando no celular poderá <b>pressionar a foto</b> finalizada para compartilhar ou clicar em
+                            <b>Baixar Imagem</b> e verá na sua galeria de fotos.
+                        </p>
+                        <h3>Para onde vai os arquivos enviados?</h3>
+                        <p>
+                            As fotos enviadas e geradas não são enviadas para nenhum servidor de internet, ficam apenas
+                            no <b>armazenamento temporário</b> do seu navegador.
+                        </p>
+                        <h3>Deseja ter seu evento aqui?</h3>
+                        <p>
+                            Entre em
+                            <a href="https://wa.link/30h8x7" target="_blank">contato com o desenvolvedor</a> e consulte
+                            os requisitos.
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </main>
+
+        <script src="/public/js/scripts.js"></script>
+        <script src="/public/js/cropper.min.js"></script>
+    </body>
+</html>
