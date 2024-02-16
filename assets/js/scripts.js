@@ -119,7 +119,7 @@ $(() => {
 
         if (dataNiver) {
             ctx.font = 'bold 55px sans-serif';
-            ctx.fillStyle = '#000';
+            ctx.fillStyle = dadosCartaz.colors.secondary;
             ctx.fillText(dataNiver, dadosCartaz.niver.data[modeloNiver]['x'], dadosCartaz.niver.data[modeloNiver]['y']);
         }
     }

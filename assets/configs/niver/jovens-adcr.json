@@ -1,7 +1,7 @@
 {
     "data": {
-        "shortTitle": "Banda Filarmônica Canaã",
-        "title": "Banda Filarmônica Canaã",
+        "shortTitle": "Jovens ADCR Sede",
+        "title": "Jovens ADCR <br class='d-md-none'>Sede",
         "date": null,
         "link": null
     },
@@ -10,19 +10,19 @@
         "height": 1920
     },
     "colors": {
-        "primary": "#7e0001",
-        "secondary": "#2E2B2C",
-        "text": "#ffffff"
+        "primary": "#e2a82f",
+        "secondary": "#0a114c",
+        "text": "#0a114c"
     },
     "niver": {
         "aniversariante": [
             {
                 "x": 540,
-                "y": 1500
+                "y": 1490
             },
             {
                 "x": 540,
-                "y": 1555
+                "y": 615
             },
             {
                 "x": 540,
@@ -46,15 +46,15 @@
         "data": [
             {
                 "x": 540,
-                "y": 1817
+                "y": 1770
+            },
+            {
+                "x": 540,
+                "y": 755
             },
             {
                 "x": 875,
-                "y": 1305
-            },
-            {
-                "x": 875,
-                "y": 1305
+                "y": 897
             }
         ]
     }
