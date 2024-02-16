@@ -13,6 +13,14 @@
         {
             "label": "Banda Filarmônica Canaã",
             "route": "cartaz-aniversariante.html?evento=banda-canaa&cartaz=niver"
+        },
+        {
+            "label": "Jovens ADCR",
+            "route": "cartaz-aniversariante.html?evento=jovens-adcr&cartaz=niver"
+        },
+        {
+            "label": "EBD ADCR Sede",
+            "route": "cartaz-aniversariante.html?evento=ebd-sede&cartaz=niver"
         }
     ]
 }

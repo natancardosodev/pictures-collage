@@ -1,0 +1,61 @@
+{
+    "data": {
+        "shortTitle": "EBD ADCR Sede",
+        "title": "Escola Bíblica Dominical <br class='d-md-none'>ADCR Sede",
+        "date": null,
+        "link": null
+    },
+    "sizes": {
+        "width": 1080,
+        "height": 1920
+    },
+    "colors": {
+        "primary": "#562309",
+        "secondary": "#ef8d5d",
+        "text": "#562309"
+    },
+    "niver": {
+        "aniversariante": [
+            {
+                "x": 540,
+                "y": 1775
+            },
+            {
+                "x": 540,
+                "y": 1570
+            },
+            {
+                "x": 540,
+                "y": 980
+            }
+        ],
+        "subtitle": [
+            {
+                "x": 540,
+                "y": 1580
+            },
+            {
+                "x": 540,
+                "y": 1475
+            },
+            {
+                "x": 540,
+                "y": 1475
+            }
+        ],
+        "data": [
+            {
+                "x": 540,
+                "y": 1565
+            },
+            {
+                "x": 540,
+                "y": 835
+            },
+            {
+                "x": 875,
+                "y": 1305
+            }
+        ]
+    }
+}
