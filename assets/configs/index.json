@@ -15,8 +15,16 @@
             "route": "cartaz-aniversariante.html?evento=banda-canaa&cartaz=niver"
         },
         {
+            "label": "Mulheres ADCR",
+            "route": "cartaz-aniversariante.html?evento=mulheres-adcr&cartaz=niver"
+        },
+        {
             "label": "Jovens ADCR",
             "route": "cartaz-aniversariante.html?evento=jovens-adcr&cartaz=niver"
+        },
+        {
+            "label": "Crianças ADCR",
+            "route": "cartaz-aniversariante.html?evento=criancas-adcr&cartaz=niver"
         },
         {
             "label": "EBD ADCR Sede",
