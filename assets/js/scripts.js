@@ -12,6 +12,7 @@ $(() => {
     let buttonLink = $('#downloadLink');
     let buttonReload = $('#btnReload');
     let buttonReloadDados = $('#btnReloadDados');
+    let buttonHome = $('#btnHome');
     let result = $('#resultImage');
     let modeloNiver = $('#field-modelo');
     const isIphone = window.navigator.userAgent.toLowerCase().indexOf('iphone') > -1;
@@ -52,6 +53,7 @@ $(() => {
         fetch(`./assets/configs/index.json`)
             .then((response) => response.json())
             .then((response) => {
+                $('#heading').hide();
                 let htmlEuvou = response['euvou'].length ? '<br><br><h2>Cartaz Eu Vou</h2><ul>' : '';
                 response['euvou'].forEach((item) => {
                     htmlEuvou += '<a href="' + item.route + '"><li>' + item.label + '</li></a>';
@@ -74,7 +76,7 @@ $(() => {
             predefinedImage.alt = dadosCartaz.data.title;
             predefinedImage.width = dadosCartaz.sizes.width;
             predefinedImage.height = dadosCartaz.sizes.height;
-            $('#border-secondary').css('background-color', dadosCartaz.colors.secondary);
+            $('#heading').css('background-color', dadosCartaz.colors.secondary);
             $('#date').css('color', dadosCartaz.colors.secondary);
             $('#content-evento').css('background-color', dadosCartaz.colors.primary);
             $('#title').html(dadosCartaz.data.title);
@@ -217,6 +219,7 @@ $(() => {
                         }
                         buttonReload.show();
                         buttonReloadDados.show();
+                        $('#form').hide();
                     });
                 }
             };

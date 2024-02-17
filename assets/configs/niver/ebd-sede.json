@@ -3,7 +3,8 @@
         "shortTitle": "EBD ADCR Sede",
         "title": "Escola Bíblica Dominical <br class='d-md-none'>ADCR Sede",
         "date": null,
-        "link": null
+        "link": null,
+        "isSubtitle": true
     },
     "sizes": {
         "width": 1080,
@@ -46,7 +47,7 @@
         "data": [
             {
                 "x": 540,
-                "y": 1565
+                "y": 1570
             },
             {
                 "x": 540,

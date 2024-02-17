@@ -27,7 +27,26 @@
 
     <body>
         <header>
-            <div id="border-secondary"></div>
+            <div id="heading">
+                <div class="row" style="max-width: 960px; margin: 0 auto">
+                    <a
+                        id="btnHome"
+                        href="/public/"
+                        title="Página Inicial"
+                        class="col-md-1 pt-4 btn btn-terciary btn-lg mb-3 text-white d-none d-md-block"
+                        ><i class="fa-solid fa-home"></i
+                    ></a>
+                    <h1 class="col-md-10 display-5 fw-bold m-0 mx-auto p-3 text-center text-white">
+                        Cartaz Aniversariante
+                    </h1>
+                    <a
+                        id="btnReloadDados"
+                        title="Recarregar Dados"
+                        class="col-md-1 pt-4 btn btn-terciary btn-lg mb-3 text-white d-none d-md-block"
+                        ><i class="fa-solid fa-arrows-rotate"></i
+                    ></a>
+                </div>
+            </div>
             <div id="content-evento">
                 <a href="#" id="link-evento" target="_blank" title="Saiba mais">
                     <h3 id="title"></h3>
@@ -37,25 +56,30 @@
         </header>
         <main>
             <div class="mb-5 text-center" id="wrapper">
-                <h1 class="col-lg-7 mx-auto display-5 mb-4 fw-bold text-body-emphasis">
-                    Gerar Cartaz para o <br />Aniversariante
-                </h1>
-                <div class="text-start">
+                <div class="text-start" id="form">
                     <label class="form-label" for="nome">Nome e sobrenome</label>
                     <input class="form-control" type="text" name="nome" id="field-nome" /><br />
 
-                    <label class="form-label" for="subtitle">Subtítulo (opcional)</label>
-                    <input class="form-control" type="text" name="subtitle" id="field-subtitle" /><br />
+                    <div class="group-subtitle" style="display: none">
+                        <label class="form-label" for="subtitle" id="label-subtitle">Subtítulo</label>
+                        <input class="form-control" type="text" name="subtitle" id="field-subtitle" /><br />
+                    </div>
 
-                    <label class="form-label" for="data">Data de aniversário (DD/MM)</label>
-                    <input class="form-control" type="date" name="data" id="field-data" /><br />
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="form-label" for="data">Data de aniversário</label>
+                            <input class="form-control" type="date" name="data" id="field-data" placeholder="DD/MM" />
+                        </div>
+                        <div class="col-6">
+                            <label class="form-label" for="modelo">Modelo do cartaz</label>
+                            <select class="form-control" name="modelo" id="field-modelo">
+                                <option value="0" selected>Modelo 1</option>
+                                <option value="1">Modelo 2</option>
+                            </select>
+                        </div>
+                    </div>
 
-                    <label class="form-label" for="modelo">Modelo do cartaz</label>
-                    <select class="form-control" name="modelo" id="field-modelo">
-                        <option value="0" selected>Modelo 1</option>
-                        <option value="1">Modelo 2</option>
-                        <option value="2">Modelo 3</option></select
-                    ><br />
+                    <br />
 
                     <label class="form-label" for="modelo">Foto <i>(Enquadre o rosto na área demarcada)</i></label>
                     <input
@@ -96,9 +120,9 @@
                     <a id="btnReload" class="btn btn-terciary btn-lg mb-3" style="display: none"
                         ><i class="fa-solid fa-plus"></i> Gerar outra imagem</a
                     >
-                    <a id="btnReloadDados" class="btn btn-terciary btn-lg mb-3" style="display: none"
+                    <!-- <a id="btnReloadDados" class="btn btn-terciary btn-lg mb-3" style="display: none"
                         ><i class="fa-solid fa-arrows-rotate"></i> Recarregar Dados</a
-                    >
+                    > -->
                 </div>
                 <div id="resultImage">
                     <div class="item"></div>
@@ -112,7 +136,7 @@
             <footer>
                 <p class="d-relative text-center gap-1">
                     <a class="btn btn-terciary text-body-secondary" id="btnCreditos" href="#creditos" role="button">
-                        Desenvolvido por Natan Cardoso
+                        By Natan Cardoso
                         <br /><span class="text-decoration-underline fst-italic">Mais Informações ...</span>
                     </a>
                 </p>
