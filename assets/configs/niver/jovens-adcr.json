@@ -1,9 +1,10 @@
 {
     "data": {
-        "shortTitle": "Jovens ADCR Sede",
-        "title": "Jovens ADCR <br class='d-md-none'>Sede",
+        "shortTitle": "Jovens ADCR",
+        "title": "Jovens ADCR",
         "date": null,
-        "link": null
+        "link": null,
+        "isSubtitle": false
     },
     "sizes": {
         "width": 1080,
@@ -46,11 +47,11 @@
         "data": [
             {
                 "x": 540,
-                "y": 1770
+                "y": 1790
             },
             {
                 "x": 540,
-                "y": 755
+                "y": 820
             },
             {
                 "x": 875,

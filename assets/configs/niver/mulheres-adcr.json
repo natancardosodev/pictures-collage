@@ -1,9 +1,10 @@
 {
     "data": {
-        "shortTitle": "Mulheres ADCR Sede",
-        "title": "Mulheres ADCR <br class='d-md-none'>Sede",
+        "shortTitle": "Mulheres ADCR",
+        "title": "Mulheres ADCR",
         "date": null,
-        "link": null
+        "link": null,
+        "isSubtitle": false
     },
     "sizes": {
         "width": 1080,

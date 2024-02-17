@@ -3,7 +3,8 @@
         "shortTitle": "Banda Filarmônica Canaã",
         "title": "Banda Filarmônica Canaã",
         "date": null,
-        "link": null
+        "link": null,
+        "isSubtitle": true
     },
     "sizes": {
         "width": 1080,

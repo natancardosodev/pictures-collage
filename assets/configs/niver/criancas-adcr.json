@@ -1,24 +1,25 @@
 {
     "data": {
-        "shortTitle": "Crianças ADCR Sede",
-        "title": "Crianças ADCR <br class='d-md-none'>Sede",
+        "shortTitle": "Crianças ADCR",
+        "title": "Crianças ADCR",
         "date": null,
-        "link": null
+        "link": null,
+        "isSubtitle": false
     },
     "sizes": {
         "width": 1080,
         "height": 1920
     },
     "colors": {
-        "primary": "#e2a82f",
-        "secondary": "#0a114c",
+        "primary": "#f7ce6f",
+        "secondary": "#82c0cc",
         "text": "#0a114c"
     },
     "niver": {
         "aniversariante": [
             {
                 "x": 540,
-                "y": 1490
+                "y": 1420
             },
             {
                 "x": 540,
@@ -46,7 +47,7 @@
         "data": [
             {
                 "x": 540,
-                "y": 1770
+                "y": 250
             },
             {
                 "x": 540,
