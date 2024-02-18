@@ -12,7 +12,6 @@ $(() => {
     let buttonLink = $('#downloadLink');
     let buttonReload = $('#btnReload');
     let buttonReloadDados = $('#btnReloadDados');
-    let buttonHome = $('#btnHome');
     let result = $('#resultImage');
     let modeloNiver = $('#field-modelo');
     const isIphone = window.navigator.userAgent.toLowerCase().indexOf('iphone') > -1;
@@ -76,6 +75,7 @@ $(() => {
             predefinedImage.alt = dadosCartaz.data.title;
             predefinedImage.width = dadosCartaz.sizes.width;
             predefinedImage.height = dadosCartaz.sizes.height;
+            dadosCartaz.data.isSubtitle ? $('#group-subtitle').show() : $('#group-subtitle').hide();
             $('#heading').css('background-color', dadosCartaz.colors.secondary);
             $('#date').css('color', dadosCartaz.colors.secondary);
             $('#content-evento').css('background-color', dadosCartaz.colors.primary);
