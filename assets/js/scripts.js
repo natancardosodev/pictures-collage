@@ -254,11 +254,6 @@ $(() => {
                         msgCortar.hide();
                         buttonCortar.hide();
 
-                        // TODO MANTER FORMULÁRIO SALVO E BTN LIMPAR
-                        // $('#field-nome')[0].value = null;
-                        // $('#field-subtitle')[0].value = null;
-                        // $('#field-data')[0].value = null;
-
                         if (!isIphone) {
                             msgFinal.show();
                             buttonLink.attr('href', mergedImage.src).show();
