@@ -11,7 +11,7 @@ $(() => {
     let msgFinaliOS = $('#msg-final-ios');
     let buttonLink = $('#downloadLink');
     let buttonReload = $('#btnReload');
-    let buttonReloadDados = $('#btnReloadDados');
+    let buttonReloadDados = $('.btnReloadDados');
     let result = $('#resultImage');
     let modeloNiver = $('#field-modelo');
     const isIphone = window.navigator.userAgent.toLowerCase().indexOf('iphone') > -1;
@@ -33,6 +33,7 @@ $(() => {
         if (localStorage.getItem(eventName) && localStorage.getItem(eventName).length) {
             dadosCartaz = JSON.parse(atob(localStorage.getItem(eventName)));
             setDadosCartaz();
+            checkDataSession();
 
             return;
         }
@@ -53,21 +54,42 @@ $(() => {
             .then((response) => response.json())
             .then((response) => {
                 $('#heading').hide();
-                let htmlEuvou = response['euvou'].length ? '<br><br><h2>Cartaz Eu Vou</h2><ul>' : '';
+                let htmlEuvou = response['euvou'].length ? '<br><br><h2>Cartaz Eu Vou</h2>' : '';
                 response['euvou'].forEach((item) => {
-                    htmlEuvou += '<a href="' + item.route + '"><li>' + item.label + '</li></a>';
+                    htmlEuvou +=
+                        '<a href="' +
+                        item.route +
+                        '" class="list-group-item list-group-item-action">' +
+                        item.label +
+                        '</a>';
                 });
-                htmlEuvou += '</ul>';
                 $('#modelos-euvou').html(htmlEuvou);
 
-                let htmlNiver = response['niver'].length ? '<br><br><h2>Cartaz Aniversariante</h2><ul>' : '';
+                let htmlNiver = response['niver'].length ? '<br><br><h2>Cartaz Aniversariante</h2>' : '';
                 response['niver'].forEach((item) => {
-                    htmlNiver += '<a href="' + item.route + '"><li>' + item.label + '</li></a>';
+                    htmlNiver +=
+                        '<a href="' +
+                        item.route +
+                        '" class="list-group-item list-group-item-action">' +
+                        item.label +
+                        '</a>';
                 });
-                htmlNiver += '</ul>';
                 $('#modelos-niver').html(htmlNiver);
             });
     };
+
+    function checkDataSession() {
+        if (sessionStorage.getItem('dataForm')) {
+            let dataForm = JSON.parse(sessionStorage.getItem('dataForm'));
+            $('.btnLimpar').show();
+            $('#field-nome').val(dataForm.nomeNiver);
+            $('#field-subtitle').val(dataForm.subtitleNiver);
+            $('#field-data').val(dateFixIso8601(dataForm.dataNiver));
+            $('#field-modelo').val(dataForm.modeloNiver);
+        } else {
+            $('.btnLimpar').hide();
+        }
+    }
 
     function setDadosCartaz() {
         if (dadosCartaz) {
@@ -75,9 +97,9 @@ $(() => {
             predefinedImage.alt = dadosCartaz.data.title;
             predefinedImage.width = dadosCartaz.sizes.width;
             predefinedImage.height = dadosCartaz.sizes.height;
+            if (dadosCartaz.data.isSubtitle) $('#label-subtitle').text(dadosCartaz.data.labelSubtitle);
             dadosCartaz.data.isSubtitle ? $('#group-subtitle').show() : $('#group-subtitle').hide();
             $('#heading').css('background-color', dadosCartaz.colors.secondary);
-            $('#date').css('color', dadosCartaz.colors.secondary);
             $('#content-evento').css('background-color', dadosCartaz.colors.primary);
             $('#title').html(dadosCartaz.data.title);
             $('#date').html(dadosCartaz.data.date);
@@ -92,37 +114,62 @@ $(() => {
         return dateInput ? new Date(dateInput.replaceAll('-', '/')).toLocaleDateString().slice(0, 5) : null;
     }
 
-    function generateTextNiver(ctx) {
-        ctx.textAlign = 'center';
+    function dateFixIso8601(dateInput) {
+        let year = new Date().getFullYear();
+        let date = dateInput.split('/');
+
+        return dateInput ? `${year}-${date[1]}-${date[0]}` : null;
+    }
+
+    function getDados() {
         let nomeNiver = $('#field-nome')[0].value;
         let subtitleNiver = $('#field-subtitle')[0].value;
         let dataNiver = dateFix($('#field-data')[0].value);
         let modeloNiver = $('#field-modelo')[0].value;
 
-        if (nomeNiver) {
+        const dataForm = {
+            nomeNiver,
+            subtitleNiver,
+            dataNiver,
+            modeloNiver
+        };
+
+        return dataForm;
+    }
+
+    function generateTextNiver(ctx) {
+        ctx.textAlign = 'center';
+        let dataForm = getDados();
+        sessionStorage.setItem('dataForm', JSON.stringify(dataForm));
+
+        if (dataForm.nomeNiver) {
             ctx.font = 'bold 75px sans-serif';
             ctx.fillStyle = dadosCartaz.colors.primary;
             ctx.fillText(
-                nomeNiver,
-                dadosCartaz.niver.aniversariante[modeloNiver]['x'],
-                dadosCartaz.niver.aniversariante[modeloNiver]['y']
+                dataForm.nomeNiver,
+                dadosCartaz.niver.aniversariante[dataForm.modeloNiver]['x'],
+                dadosCartaz.niver.aniversariante[dataForm.modeloNiver]['y']
             );
         }
 
-        if (subtitleNiver) {
+        if (dataForm.subtitleNiver) {
             ctx.font = 'italic normal 55px serif';
             ctx.fillStyle = '#000';
             ctx.fillText(
-                subtitleNiver,
-                dadosCartaz.niver.subtitle[modeloNiver]['x'],
-                dadosCartaz.niver.subtitle[modeloNiver]['y']
+                dataForm.subtitleNiver,
+                dadosCartaz.niver.subtitle[dataForm.modeloNiver]['x'],
+                dadosCartaz.niver.subtitle[dataForm.modeloNiver]['y']
             );
         }
 
-        if (dataNiver) {
+        if (dataForm.dataNiver) {
             ctx.font = 'bold 55px sans-serif';
             ctx.fillStyle = dadosCartaz.colors.secondary;
-            ctx.fillText(dataNiver, dadosCartaz.niver.data[modeloNiver]['x'], dadosCartaz.niver.data[modeloNiver]['y']);
+            ctx.fillText(
+                dataForm.dataNiver,
+                dadosCartaz.niver.data[dataForm.modeloNiver]['x'],
+                dadosCartaz.niver.data[dataForm.modeloNiver]['y']
+            );
         }
     }
 
@@ -207,9 +254,10 @@ $(() => {
                         msgCortar.hide();
                         buttonCortar.hide();
 
-                        $('#field-nome')[0].value = null;
-                        $('#field-subtitle')[0].value = null;
-                        $('#field-data')[0].value = null;
+                        // TODO MANTER FORMULÁRIO SALVO E BTN LIMPAR
+                        // $('#field-nome')[0].value = null;
+                        // $('#field-subtitle')[0].value = null;
+                        // $('#field-data')[0].value = null;
 
                         if (!isIphone) {
                             msgFinal.show();
@@ -238,6 +286,11 @@ $(() => {
     buttonReloadDados.on('click', () => {
         localStorage.removeItem(eventName);
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.location.reload();
+    });
+
+    $('.btnLimpar').on('click', () => {
+        sessionStorage.removeItem('dataForm');
         window.location.reload();
     });
 });
