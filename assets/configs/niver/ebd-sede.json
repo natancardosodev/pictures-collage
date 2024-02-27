@@ -4,7 +4,8 @@
         "title": "Escola Bíblica Dominical <br class='d-md-none'>ADCR Sede",
         "date": null,
         "link": null,
-        "isSubtitle": true
+        "isSubtitle": true,
+        "labelSubtitle": "Função na EBD (se houver)"
     },
     "sizes": {
         "width": 1080,
@@ -12,7 +13,7 @@
     },
     "colors": {
         "primary": "#562309",
-        "secondary": "#ef8d5d",
+        "secondary": "#D58D63",
         "text": "#ffffff"
     },
     "niver": {

@@ -14,6 +14,7 @@
         <link rel="icon" type="image/x-icon" href="/public/assets/images/favicon.ico" />
         <link rel="stylesheet" href="/public/css/style.css" />
         <link rel="stylesheet" href="/public/css/cropper.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=analyticsID"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -28,22 +29,42 @@
     <body>
         <header>
             <div id="heading">
+                <div class="row justify-content-center" style="max-width: 960px; margin: 0 auto">
+                    <a
+                        id="btnHome"
+                        href="/public/"
+                        title="Página Inicial"
+                        class="col-2 pt-4 btn btn-terciary btn-lg text-white d-sm-block d-md-none"
+                        style="font-size: 15px;"
+                        ><span class="material-symbols-outlined">home</span>Início</a>
+                    <a
+                        title="Limpar Dados"
+                        class="btnLimpar col-2 pt-4 btn btn-terciary btn-lg text-white d-sm-block d-md-none"
+                        style="font-size: 15px;"
+                        ><span class="material-symbols-outlined">remove_selection</span
+                    >Limpar</a>
+                    <a
+                        title="Recarregar Dados"
+                        class="btnReloadDados col-2 pt-4 btn btn-terciary btn-lg text-white d-sm-block d-md-none"
+                        style="font-size: 15px;"
+                        ><span class="material-symbols-outlined">refresh</span
+                    >Atualizar</a>
+                </div>
                 <div class="row" style="max-width: 960px; margin: 0 auto">
                     <a
                         id="btnHome"
                         href="/public/"
                         title="Página Inicial"
                         class="col-md-1 pt-4 btn btn-terciary btn-lg mb-3 text-white d-none d-md-block"
-                        ><i class="fa-solid fa-home"></i
+                        ><i class="material-symbols-outlined">home</i></i
                     ></a>
                     <h1 class="col-md-10 display-5 fw-bold m-0 mx-auto p-3 text-center text-white">
                         Cartaz Aniversariante
                     </h1>
                     <a
-                        id="btnReloadDados"
                         title="Recarregar Dados"
-                        class="col-md-1 pt-4 btn btn-terciary btn-lg mb-3 text-white d-none d-md-block"
-                        ><i class="fa-solid fa-arrows-rotate"></i
+                        class="btnReloadDados col-md-1 pt-4 btn btn-terciary btn-lg mb-3 text-white d-none d-md-block"
+                        ><i class="material-symbols-outlined">refresh</i
                     ></a>
                 </div>
             </div>
@@ -56,6 +77,9 @@
         </header>
         <main>
             <div class="mb-5 text-center" id="wrapper">
+                <a class="btnLimpar btn btn-terciary text-body-secondary mb-3 d-none" style="margin: 0 auto">
+                    <span class="material-symbols-outlined">remove_selection</span> Limpar Dados
+                </a>
                 <div class="text-start" id="form">
                     <label class="form-label" for="nome">Nome e sobrenome</label>
                     <input class="form-control" type="text" name="nome" id="field-nome" /><br />
@@ -108,20 +132,20 @@
                         >
                     </div>
                     <button class="btn btn-primary btn-lg mb-3" style="display: none" id="btn-cortar">
-                        <i class="fa-solid fa-crop"></i> Cortar Imagem e Gerar Cartaz
+                        <i class="material-symbols-outlined">crop</i> Cortar Imagem e Gerar Cartaz
                     </button>
                     <a
                         id="downloadLink"
                         class="btn btn-secondary btn-lg mb-3"
                         style="display: none"
                         download="cartaz-niver.png"
-                        ><i class="fa-solid fa-download"></i> Baixar imagem</a
+                        ><i class="material-symbols-outlined">download</i> Baixar imagem</a
                     >
                     <a id="btnReload" class="btn btn-terciary btn-lg mb-3" style="display: none"
-                        ><i class="fa-solid fa-plus"></i> Gerar outra imagem</a
+                        ><i class="material-symbols-outlined">add_circle</i> Gerar outra imagem</a
                     >
-                    <!-- <a id="btnReloadDados" class="btn btn-terciary btn-lg mb-3" style="display: none"
-                        ><i class="fa-solid fa-arrows-rotate"></i> Recarregar Dados</a
+                    <!-- <a class="btnReloadDados btn btn-terciary btn-lg mb-3" style="display: none"
+                        ><i class="material-symbols-outlined">refresh</i> Recarregar Dados</a
                     > -->
                 </div>
                 <div id="resultImage">

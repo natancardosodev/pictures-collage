@@ -1,7 +1,4 @@
 @import '~bootstrap/dist/css/bootstrap';
-@import '~@fortawesome/fontawesome-free/css/fontawesome.css';
-@import '~@fortawesome/fontawesome-free/css/brands.css';
-@import '~@fortawesome/fontawesome-free/css/solid.css';
 
 body {
     background-color: #efefef !important;
@@ -15,6 +12,10 @@ main {
     padding: 1.6em;
 }
 
+#heading {
+    background-color: #5a5a5a;
+}
+
 #resultImage {
     display: flex;
     flex-flow: column;
@@ -22,6 +23,10 @@ main {
     .item {
         display: flex;
         flex: 1;
+    }
+
+    img {
+        border: 2px solid;
     }
 }
 
@@ -66,7 +71,7 @@ main {
 
     #date {
         font-size: 1.4em;
-        font-weight: bold;
+        font-style: italic;
     }
 
     #location {
@@ -84,4 +89,9 @@ ul {
 
 .form-label {
     font-weight: 500;
+}
+
+.material-symbols-outlined {
+    position: relative;
+    top: 5px;
 }

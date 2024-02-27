@@ -4,7 +4,8 @@
         "title": "Banda Filarmônica Canaã",
         "date": null,
         "link": null,
-        "isSubtitle": true
+        "isSubtitle": true,
+        "labelSubtitle": "Nomenclatura Instrumento"
     },
     "sizes": {
         "width": 1080,
