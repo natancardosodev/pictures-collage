@@ -5,8 +5,8 @@
             "route": "cartaz-euvou.html?evento=evento-exemplo&cartaz=euvou"
         },
         {
-            "label": "Congresso Mulheres ADCR",
-            "route": "cartaz-euvou.html?evento=congresso-mulheres-adcr&cartaz=euvou"
+            "label": "Princesas de Fé ADCR",
+            "route": "cartaz-euvou.html?evento=princesas-de-fe-adcr&cartaz=euvou"
         }
     ],
     "niver": [
