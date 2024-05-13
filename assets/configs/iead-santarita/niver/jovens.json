@@ -1,0 +1,41 @@
+{
+    "data": {
+        "shortTitle": "Jovens ADCR",
+        "title": "Jovens ADCR",
+        "date": null,
+        "link": null,
+        "isSubtitle": false
+    },
+    "sizes": {
+        "width": 1080,
+        "height": 1920
+    },
+    "colors": {
+        "primary": "#e2a82f",
+        "secondary": "#0a114c",
+        "text": "#0a114c"
+    },
+    "niver": {
+        "aniversariante": [
+            {
+                "x": 540,
+                "y": 1490
+            },
+            {
+                "x": 540,
+                "y": 615
+            }
+        ],
+        "subtitle": [],
+        "data": [
+            {
+                "x": 540,
+                "y": 1790
+            },
+            {
+                "x": 540,
+                "y": 820
+            }
+        ]
+    }
+}
