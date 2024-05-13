@@ -21,10 +21,15 @@ $(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const eventName = urlParams.get('evento');
     const typeCartaz = urlParams.get('cartaz');
-    predefinedImage.src = `./assets/images/${typeCartaz}/${eventName}${typeCartaz === 'niver' ? '-0' : ''}.png`;
+    const entidade = urlParams.get('v');
+    predefinedImage.src = `./assets/images/${entidade ? entidade + '/' : ''}${typeCartaz}/${eventName}${
+        typeCartaz === 'niver' ? '-0' : ''
+    }.png`;
 
     modeloNiver.on('change', () => {
-        predefinedImage.src = `./assets/images/${typeCartaz}/${eventName}-${modeloNiver[0].value}.png`;
+        predefinedImage.src = `./assets/images/${entidade ? entidade + '/' : ''}${typeCartaz}/${eventName}-${
+            modeloNiver[0].value
+        }.png`;
     });
 
     predefinedImage.onload = function () {
@@ -38,7 +43,7 @@ $(() => {
             return;
         }
 
-        fetch(`./assets/configs/${typeCartaz}/${eventName}.json`)
+        fetch(`./assets/configs/${entidade ? entidade + '/' : ''}${typeCartaz}/${eventName}.json`)
             .then((response) => response.json())
             .then((response) => {
                 dadosCartaz = response;
@@ -50,7 +55,7 @@ $(() => {
     predefinedImage.onerror = () => {
         $('#wrapper').hide();
         $('#msg-error').show();
-        fetch(`./assets/configs/index.json`)
+        fetch(`./assets/configs/index${entidade ? '-' + entidade : ''}.json`)
             .then((response) => response.json())
             .then((response) => {
                 $('#heading').hide();
@@ -287,5 +292,9 @@ $(() => {
     $('.btnLimpar').on('click', () => {
         sessionStorage.removeItem('dataForm');
         window.location.reload();
+    });
+
+    $('.btnHome').on('click', () => {
+        window.location.href = `/public/${entidade ? '?v=' + entidade : ''}`;
     });
 });
