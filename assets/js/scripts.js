@@ -116,14 +116,20 @@ $(() => {
     }
 
     function dateFix(dateInput) {
-        return dateInput ? new Date(dateInput.replaceAll('-', '/')).toLocaleDateString().slice(0, 5) : null;
+        let date = dateInput.split('-');
+
+        return dateInput ? `${date[2]}/${date[1]}` : null;
     }
 
     function dateFixIso8601(dateInput) {
         let year = new Date().getFullYear();
         let date = dateInput.split('/');
 
-        return dateInput ? `${year}-${date[1]}-${date[0]}` : null;
+        return dateInput
+            ? `${year}-${date[1].length === 1 ? '0' + date[1] : date[1]}-${
+                  date[0].length === 1 ? '0' + date[0] : date[0]
+              }`
+            : null;
     }
 
     function getDados() {

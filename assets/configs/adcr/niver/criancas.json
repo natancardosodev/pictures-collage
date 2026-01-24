@@ -1,0 +1,41 @@
+{
+    "data": {
+        "shortTitle": "Crianças ADCR",
+        "title": "Crianças ADCR",
+        "date": null,
+        "link": null,
+        "isSubtitle": false
+    },
+    "sizes": {
+        "width": 1080,
+        "height": 1920
+    },
+    "colors": {
+        "primary": "#f7ce6f",
+        "secondary": "#82c0cc",
+        "text": "#0a114c"
+    },
+    "niver": {
+        "aniversariante": [
+            {
+                "x": 540,
+                "y": 1420
+            },
+            {
+                "x": 540,
+                "y": 615
+            }
+        ],
+        "subtitle": [],
+        "data": [
+            {
+                "x": 540,
+                "y": 250
+            },
+            {
+                "x": 150,
+                "y": 1540
+            }
+        ]
+    }
+}
