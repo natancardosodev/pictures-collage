@@ -1,0 +1,41 @@
+{
+    "data": {
+        "shortTitle": "Mulheres ADCR",
+        "title": "Mulheres ADCR",
+        "date": null,
+        "link": null,
+        "isSubtitle": false
+    },
+    "sizes": {
+        "width": 1080,
+        "height": 1920
+    },
+    "colors": {
+        "primary": "#eac462",
+        "secondary": "#ED4053",
+        "text": "#0a114c"
+    },
+    "niver": {
+        "aniversariante": [
+            {
+                "x": 540,
+                "y": 1500
+            },
+            {
+                "x": 540,
+                "y": 1450
+            }
+        ],
+        "subtitle": [],
+        "data": [
+            {
+                "x": 830,
+                "y": 1280
+            },
+            {
+                "x": 540,
+                "y": 1700
+            }
+        ]
+    }
+}
