@@ -1,0 +1,51 @@
+{
+    "data": {
+        "shortTitle": "Orquestra Geração de Asafe",
+        "title": "Orquestra Geração de Asafe",
+        "date": null,
+        "link": null,
+        "isSubtitle": true,
+        "labelSubtitle": "Nomenclatura Instrumento"
+    },
+    "sizes": {
+        "width": 1080,
+        "height": 1920
+    },
+    "colors": {
+        "primary": "#7e0001",
+        "secondary": "#2E2B2C",
+        "text": "#ffffff"
+    },
+    "niver": {
+        "aniversariante": [
+            {
+                "x": 540,
+                "y": 1500
+            },
+            {
+                "x": 540,
+                "y": 1555
+            }
+        ],
+        "subtitle": [
+            {
+                "x": 540,
+                "y": 1580
+            },
+            {
+                "x": 540,
+                "y": 1475
+            }
+        ],
+        "data": [
+            {
+                "x": 540,
+                "y": 1817
+            },
+            {
+                "x": 875,
+                "y": 1305
+            }
+        ]
+    }
+}
