@@ -291,12 +291,12 @@ $(() => {
                         msgCortar.hide();
                         buttonCortar.hide();
 
-                        if (!isIphone) {
-                            msgFinal.show();
-                            buttonLink.attr('href', mergedImage.src).show();
-                        } else {
-                            msgFinaliOS.show();
-                        }
+                        // if (!isIphone) {
+                        msgFinal.show();
+                        buttonLink.attr('href', mergedImage.src).show();
+                        // } else {
+                        //     msgFinaliOS.show();
+                        // }
                         buttonReload.show();
                         buttonReloadDados.show();
                         $('#form').hide();
