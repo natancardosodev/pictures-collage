@@ -96,23 +96,12 @@ $(() => {
         }
     }
 
-    function setDadosCartaz() {
-        if (dadosCartaz) {
-            window.document.title += ' - ' + dadosCartaz.data.shortTitle;
-            predefinedImage.alt = dadosCartaz.data.title;
-            predefinedImage.width = dadosCartaz.sizes.width;
-            predefinedImage.height = dadosCartaz.sizes.height;
-            if (dadosCartaz.data.isSubtitle) $('#label-subtitle').text(dadosCartaz.data.labelSubtitle);
-            dadosCartaz.data.isSubtitle ? $('#group-subtitle').show() : $('#group-subtitle').hide();
-            $('#heading').css('background-color', dadosCartaz.colors.secondary);
-            $('#content-evento').css('background-color', dadosCartaz.colors.primary);
-            $('#title').html(dadosCartaz.data.title);
-            $('#date').html(dadosCartaz.data.date);
-            $('#link-evento').attr('href', dadosCartaz.data.link).css('color', dadosCartaz.colors.text);
-            $('h4').css('color', dadosCartaz.colors.primary);
-        } else {
-            localStorage.removeItem(eventName);
-        }
+    function getDataAtual() {
+        const hoje = new Date();
+        const dia = String(hoje.getDate()).padStart(2, '0');
+        const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+        const ano = hoje.getFullYear();
+        return `${ano}-${mes}-${dia}`;
     }
 
     function dateFix(dateInput) {
@@ -130,6 +119,25 @@ $(() => {
                   date[0].length === 1 ? '0' + date[0] : date[0]
               }`
             : null;
+    }
+
+    function setDadosCartaz() {
+        if (dadosCartaz) {
+            window.document.title += ' - ' + dadosCartaz.data.shortTitle;
+            predefinedImage.alt = dadosCartaz.data.title;
+            predefinedImage.width = dadosCartaz.sizes.width;
+            predefinedImage.height = dadosCartaz.sizes.height;
+            if (dadosCartaz.data.isSubtitle) $('#label-subtitle').text(dadosCartaz.data.labelSubtitle);
+            dadosCartaz.data.isSubtitle ? $('#group-subtitle').show() : $('#group-subtitle').hide();
+            $('#heading').css('background-color', dadosCartaz.colors.secondary);
+            $('#content-evento').css('background-color', dadosCartaz.colors.primary);
+            $('#title').html(dadosCartaz.data.title);
+            $('#link-evento').attr('href', dadosCartaz.data.link).css('color', dadosCartaz.colors.text);
+            $('h4').css('color', dadosCartaz.colors.primary);
+            $('#field-data').val(getDataAtual());
+        } else {
+            localStorage.removeItem(eventName);
+        }
     }
 
     function getDados() {
