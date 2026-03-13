@@ -231,7 +231,25 @@ $(() => {
                         cropBoxMovable: true,
                         cropBoxResizable: true,
                         ready: function () {
-                            // cropper.zoomTo(1);
+                            const cropperContainer = uploadedImage.parentElement.querySelector('.cropper-container');
+                            const cropperCropBox = cropperContainer.querySelector('.cropper-crop-box');
+                            const cropperFace = cropperCropBox.querySelector('.cropper-face');
+
+                            const molduraOverlay = document.createElement('img');
+                            molduraOverlay.src = predefinedImage.src;
+                            molduraOverlay.style.cssText = `
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                pointer-events: none;
+                                z-index: 0;
+                                object-fit: fill;
+                                opacity: 0.85;
+                            `;
+                            // Insere dentro do crop-box, antes do .cropper-face
+                            cropperCropBox.insertBefore(molduraOverlay, cropperFace);
                         },
                         crop: function () {
                             cropper.scale(1, 1);
