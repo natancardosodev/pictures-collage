@@ -96,23 +96,12 @@ $(() => {
         }
     }
 
-    function setDadosCartaz() {
-        if (dadosCartaz) {
-            window.document.title += ' - ' + dadosCartaz.data.shortTitle;
-            predefinedImage.alt = dadosCartaz.data.title;
-            predefinedImage.width = dadosCartaz.sizes.width;
-            predefinedImage.height = dadosCartaz.sizes.height;
-            if (dadosCartaz.data.isSubtitle) $('#label-subtitle').text(dadosCartaz.data.labelSubtitle);
-            dadosCartaz.data.isSubtitle ? $('#group-subtitle').show() : $('#group-subtitle').hide();
-            $('#heading').css('background-color', dadosCartaz.colors.secondary);
-            $('#content-evento').css('background-color', dadosCartaz.colors.primary);
-            $('#title').html(dadosCartaz.data.title);
-            $('#date').html(dadosCartaz.data.date);
-            $('#link-evento').attr('href', dadosCartaz.data.link).css('color', dadosCartaz.colors.text);
-            $('h4').css('color', dadosCartaz.colors.primary);
-        } else {
-            localStorage.removeItem(eventName);
-        }
+    function getDataAtual() {
+        const hoje = new Date();
+        const dia = String(hoje.getDate()).padStart(2, '0');
+        const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+        const ano = hoje.getFullYear();
+        return `${ano}-${mes}-${dia}`;
     }
 
     function dateFix(dateInput) {
@@ -130,6 +119,25 @@ $(() => {
                   date[0].length === 1 ? '0' + date[0] : date[0]
               }`
             : null;
+    }
+
+    function setDadosCartaz() {
+        if (dadosCartaz) {
+            window.document.title += ' - ' + dadosCartaz.data.shortTitle;
+            predefinedImage.alt = dadosCartaz.data.title;
+            predefinedImage.width = dadosCartaz.sizes.width;
+            predefinedImage.height = dadosCartaz.sizes.height;
+            if (dadosCartaz.data.isSubtitle) $('#label-subtitle').text(dadosCartaz.data.labelSubtitle);
+            dadosCartaz.data.isSubtitle ? $('#group-subtitle').show() : $('#group-subtitle').hide();
+            $('#heading').css('background-color', dadosCartaz.colors.secondary);
+            $('#content-evento').css('background-color', dadosCartaz.colors.primary);
+            $('#title').html(dadosCartaz.data.title);
+            $('#link-evento').attr('href', dadosCartaz.data.link).css('color', dadosCartaz.colors.text);
+            $('h4').css('color', dadosCartaz.colors.primary);
+            $('#field-data').val(getDataAtual());
+        } else {
+            localStorage.removeItem(eventName);
+        }
     }
 
     function getDados() {
@@ -231,7 +239,25 @@ $(() => {
                         cropBoxMovable: true,
                         cropBoxResizable: true,
                         ready: function () {
-                            // cropper.zoomTo(1);
+                            const cropperContainer = uploadedImage.parentElement.querySelector('.cropper-container');
+                            const cropperCropBox = cropperContainer.querySelector('.cropper-crop-box');
+                            const cropperFace = cropperCropBox.querySelector('.cropper-face');
+
+                            const molduraOverlay = document.createElement('img');
+                            molduraOverlay.src = predefinedImage.src;
+                            molduraOverlay.style.cssText = `
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                pointer-events: none;
+                                z-index: 0;
+                                object-fit: fill;
+                                opacity: 0.85;
+                            `;
+                            // Insere dentro do crop-box, antes do .cropper-face
+                            cropperCropBox.insertBefore(molduraOverlay, cropperFace);
                         },
                         crop: function () {
                             cropper.scale(1, 1);
@@ -265,12 +291,12 @@ $(() => {
                         msgCortar.hide();
                         buttonCortar.hide();
 
-                        if (!isIphone) {
-                            msgFinal.show();
-                            buttonLink.attr('href', mergedImage.src).show();
-                        } else {
-                            msgFinaliOS.show();
-                        }
+                        // if (!isIphone) {
+                        msgFinal.show();
+                        buttonLink.attr('href', mergedImage.src).show();
+                        // } else {
+                        //     msgFinaliOS.show();
+                        // }
                         buttonReload.show();
                         buttonReloadDados.show();
                         $('#form').hide();
