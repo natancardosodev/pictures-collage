@@ -43,6 +43,8 @@ $(() => {
             return;
         }
 
+        console.log(`./assets/configs/${entidade ? entidade + '/' : ''}${typeCartaz}/${eventName}.json`);
+
         fetch(`./assets/configs/${entidade ? entidade + '/' : ''}${typeCartaz}/${eventName}.json`)
             .then((response) => response.json())
             .then((response) => {

@@ -1,0 +1,34 @@
+{
+    "euvou": [
+        {
+            "label": "Evento Exemplo",
+            "route": "cartaz-euvou.html?evento=evento-exemplo&cartaz=euvou&v=adcr"
+        },
+        {
+            "label": "Princesas de Fé ADCR",
+            "route": "cartaz-euvou.html?evento=princesas-de-fe&cartaz=euvou&v=adcr"
+        }
+    ],
+    "niver": [
+        {
+            "label": "Banda Filarmônica Canaã",
+            "route": "cartaz-aniversariante.html?evento=banda-canaa&cartaz=niver&v=adcr"
+        },
+        {
+            "label": "Mulheres ADCR",
+            "route": "cartaz-aniversariante.html?evento=mulheres&cartaz=niver&v=adcr"
+        },
+        {
+            "label": "Jovens ADCR",
+            "route": "cartaz-aniversariante.html?evento=jovens&cartaz=niver&v=adcr"
+        },
+        {
+            "label": "Crianças ADCR",
+            "route": "cartaz-aniversariante.html?evento=criancas&cartaz=niver&v=adcr"
+        },
+        {
+            "label": "EBD ADCR Sede",
+            "route": "cartaz-aniversariante.html?evento=ebd-sede&cartaz=niver&v=adcr"
+        }
+    ]
+}
